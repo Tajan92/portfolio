@@ -1,9 +1,9 @@
 disabled = false
-locale = "en"
-label = "English"
 weight = 1
 title = "Blowfish"
-
+[params]
+locale = "en"
+label = "English"
 [params]
   displayName = "EN"
   isoCode = "en"
