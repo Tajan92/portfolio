@@ -12,7 +12,7 @@ dateFormat = "2 January 2006"
 copyright = "2026"
 
 [[params.author.links]]
-email = "{email = theisrud@gmail.com}"
+email = "theisrud@gmail.com"
 
 [[params.author.links]]
 github = "https://github.com/Tajan92"
