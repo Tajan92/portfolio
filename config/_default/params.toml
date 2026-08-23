@@ -50,7 +50,7 @@ showScrollToTop = true
 
 [homepage]
 layout = "background"
-homepageImage = "_DSC1507.png"
+homepageImage = "lofoten.png"
 showRecent = true
 showRecentItems = 5
 showMoreLink = false
@@ -62,7 +62,6 @@ disableHeroImageFilter = false
 
 
 [article]
-showSummary = true
 showDate = false
 showViews = false
 showLikes = false
@@ -92,14 +91,13 @@ showWordCount = false
 showZenMode = false
 
 [list]
-showHero = true
 layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = true
 showBreadcrumbs = false
 showSummary = true
 showViews = false
 showLikes = false
-showTableOfContents = true
+showTableOfContents = false
 showCards = true
 orderByWeight = false
 groupByYear = false

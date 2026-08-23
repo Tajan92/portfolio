@@ -1,6 +1,7 @@
 ---
 title: "Choose a Blog Category"
-
+showHero: true
+heroStyle: "background"
 cascade:
   showDate: false
   showAuthor: false
