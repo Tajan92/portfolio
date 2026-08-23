@@ -1,6 +1,6 @@
 disabled = false
 weight = 1
-title = "Theis"
+title = "Home"
 
 [params]
 locale = "en"

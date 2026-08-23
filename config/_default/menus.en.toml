@@ -1,13 +1,19 @@
 [[main]]
 name = "Blog"
-pageRef = "posts"
-weight = 10
+pageRef = "blog"
+identifier = "FZJmZdfsCc"
+weight = 1
 
 [[main]]
 name = "Projects"
-pageRef = "Projects"
+pageRef = "projects"
 identifier = "ACeQuHByfS"
-weight = 9_999
+weight = 2
+
+[[blog]]
+  name = "Carport"
+  pageRef = "projects/carport"
+  weight = 10
 
 [[footer]]
 none = "none"

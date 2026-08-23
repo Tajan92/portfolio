@@ -1,6 +1,6 @@
 colorScheme = "congo"
-defaultAppearance = "light"
-autoSwitchAppearance = true
+defaultAppearance = "dark"
+autoSwitchAppearance = false
 enableA11y = false
 enableSearch = true
 enableCodeCopy = false
@@ -22,11 +22,12 @@ verification = { }
 rssnext = { }
 advertisement = { }
 enableStyledScrollbar = true
+showViews = false
 
 [buymeacoffee]
-identifier = "coffee"
+identifier = ""
 globalWidget = false
-globalWidgetMessage = "Kaffe?"
+globalWidgetMessage = ""
 globalWidgetColor = ""
 
 [languageRedirect]
@@ -43,16 +44,17 @@ mobileMenuStyle = "dropdown"
 showMenu = true
 showCopyright = true
 showThemeAttribution = false
-showAppearanceSwitcher = true
+showAppearanceSwitcher = false
 showScrollToTop = true
 
 [homepage]
-layout = "profile"
-showRecent = false
+layout = "background"
+homepageImage = "_DSC1507.png"
+showRecent = true
 showRecentItems = 5
 showMoreLink = false
 showMoreLinkDest = "/posts/"
-cardView = false
+cardView = true
 cardViewScreenWidth = false
 layoutBackgroundBlur = false
 disableHeroImageFilter = false
@@ -64,7 +66,7 @@ showLikes = false
 showDateOnlyInArticle = false
 showDateUpdated = false
 showAuthor = true
-showHero = false
+showHero = true
 layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = true
 showBreadcrumbs = false
