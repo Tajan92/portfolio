@@ -23,6 +23,7 @@ rssnext = { }
 advertisement = { }
 enableStyledScrollbar = true
 showViews = false
+backgroundCanvas = true
 
 [buymeacoffee]
 identifier = ""
@@ -54,13 +55,15 @@ showRecent = true
 showRecentItems = 5
 showMoreLink = false
 showMoreLinkDest = "/posts/"
-cardView = true
+cardView = false
 cardViewScreenWidth = false
 layoutBackgroundBlur = false
 disableHeroImageFilter = false
 
+
 [article]
-showDate = true
+showSummary = true
+showDate = false
 showViews = false
 showLikes = false
 showDateOnlyInArticle = false
@@ -75,32 +78,34 @@ showEdit = false
 editAppendPath = true
 seriesOpened = false
 showHeadingAnchors = true
-showPagination = true
+showPagination = false
 invertPagination = false
-showReadingTime = true
+showReadingTime = false
 showReadingProgress = false
 showTableOfContents = false
-showTaxonomies = false
+showTaxonomies = true
 showCategories = true
 showTags = true
 showCategoriesInSecondaryColor = false
 showAuthorsBadges = false
-showWordCount = true
+showWordCount = false
 showZenMode = false
 
 [list]
-showHero = false
+showHero = true
 layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = true
 showBreadcrumbs = false
-showSummary = false
+showSummary = true
 showViews = false
 showLikes = false
-showTableOfContents = false
-showCards = false
+showTableOfContents = true
+showCards = true
 orderByWeight = false
-groupByYear = true
-cardView = false
+groupByYear = false
+cardView = true
+showTags = true
+showCategories = true
 cardViewScreenWidth = false
 constrainItemsWidth = false
 
@@ -125,7 +130,7 @@ layoutBackgroundHeaderSpace = true
 showBreadcrumbs = false
 showViews = false
 showLikes = false
-showTableOfContents = true
+showTableOfContents = false
 groupByYear = false
 cardView = false
 cardViewScreenWidth = false

@@ -9,7 +9,7 @@ displayName = "DK"
 isoCode = "dk"
 rtl = false
 dateFormat = "2 January 2006"
-copyright = "2026"
+copyright = "@2026"
 
 [[params.author.links]]
 email = "theisrud@gmail.com"
