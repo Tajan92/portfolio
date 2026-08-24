@@ -3,46 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/blog/seeCph-blog/#project-start</loc>
+    <loc>http://localhost:52712/portfolio/blog/seeCph-blog/#project-start</loc>
     <lastmod>2026-08-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/blog/seeCph-blog/#planning</loc>
+    <loc>http://localhost:52712/portfolio/blog/seeCph-blog/#planning</loc>
     <lastmod>2026-08-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:52712/portfolio/</loc>
     <lastmod>2026-08-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/updates/</loc>
+    <loc>http://localhost:52712/portfolio/updates/</loc>
     <lastmod>2026-08-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>http://localhost:52712/portfolio/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/fog-carport/</loc>
+    <loc>http://localhost:52712/portfolio/projects/fog-carport/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>http://localhost:52712/portfolio/projects/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/blog/seecph-blog/</loc>
+    <loc>http://localhost:52712/portfolio/blog/seecph-blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
