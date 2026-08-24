@@ -1,3 +1,17 @@
-<div class="timeline-folder my-4">
-  {{ .Inner }}
+{{ $project := .Get "project" }} {{ $pages := where .Site.RegularPages "Section"
+"updates" }} {{ if $project }} {{ $pages = where $pages "Params.project"
+$project }} {{ end }}
+
+<div class="timeline flex flex-col gap-4 my-6">
+  {{ range sort $pages "Weight" "asc" }} {{ $icon := .Params.icon | default
+  "star" }} {{ $header := .Params.header | default .Title }} {{ $subheader :=
+  .Params.subheader | default "" }} {{ $badge := .Params.badge | default "" }}
+  {{ $anchor := $header | urlize }}
+
+  <div id="{{ $anchor }}">
+    {{ printf "{{< timelineItem icon=\"%s\" header=\"%s\" subheader=\"%s\"
+    badge=\"%s\" >}}" $icon $header $subheader $badge | $.Page.RenderString }}
+    {{ .Content }} {{ printf "{{< /timelineItem >}}" | $.Page.RenderString }}
+  </div>
+  {{ end }}
 </div>
