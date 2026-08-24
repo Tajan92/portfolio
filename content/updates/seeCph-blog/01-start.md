@@ -8,7 +8,7 @@ header: "Project Start"
 subheader: "21 august, 2026"
 icon: "github"
 tags: ["Java", "github"]
-externalUrl: "blog/seeCph-blog/#Project-Start"
+externalUrl: "blog/seecph-blog/#Project-Start"
 weight: 1
 ---
 
