@@ -5,8 +5,6 @@ layout: "simple"
 tags: ["Java", "CSS", "JavaScript", "PostgresSQL", "Digital Ocean", "github"]
 featureImage: "feature.png"
 cardView: true
-showHero: true
-heroStyle: "background"
 ---
 
 {{< lead >}}

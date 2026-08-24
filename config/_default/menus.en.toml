@@ -10,10 +10,5 @@ pageRef = "projects"
 identifier = "ACeQuHByfS"
 weight = 2
 
-[[blog]]
-  name = "Carport"
-  pageRef = "projects/carport"
-  weight = 10
-
 [[footer]]
 none = "none"
