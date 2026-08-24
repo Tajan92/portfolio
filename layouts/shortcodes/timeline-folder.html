@@ -11,4 +11,7 @@ timelineItem icon="%s" header="%s" subheader="%s" badge="%s" >}} %s {{<
 = printf "%s\n%s" $timelineItems $item }} {{ end }} {{ $fullTimeline := printf
 "{{< timeline >}} %s {{< /timeline >}}" $timelineItems }}
 
-<div class="my-6">{{ $fullTimeline | $.Page.RenderString }}</div>
+<!-- Explicitly include timeline classes so Tailwind doesn't purge them on GitHub Actions -->
+<div class="my-6 timeline relative pl-4 border-l-2 border-primary-500">
+  {{ $fullTimeline | $.Page.RenderString }}
+</div>
