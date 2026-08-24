@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Choose a Blog Category on Home</title>
+    <title>Blogs on Home</title>
     <link>http://localhost:1313/blog/</link>
-    <description>Recent content in Choose a Blog Category on Home</description>
+    <description>Recent content in Blogs on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>seeCph Backend API</title>
+      <link>http://localhost:1313/blog/seecph-blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/blog/seecph-blog/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/blog/seecph-blog/featured.png" />
+    </item>
     
   </channel>
 </rss>

@@ -18,7 +18,17 @@
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
       <guid>http://localhost:1313/projects/fog-carport/</guid>
       <description></description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/fog-carport/featured.png" />
+    </item>
+    
+    <item>
+      <title>seeCph Backend API</title>
+      <link>http://localhost:1313/blog/seecph-blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/blog/seecph-blog/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/blog/seecph-blog/featured.png" />
     </item>
     
   </channel>

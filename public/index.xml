@@ -9,7 +9,47 @@
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>seeCph: Project Start</title>
+      <link>http://localhost:1313/updates/seecph-blog/01-start/</link>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/updates/seecph-blog/01-start/</guid>
+      <description>Initial repository setup and architecture planning.</description>
+      
+    </item>
+    
+    <item>
+      <title>seeCph: Planning</title>
+      <link>http://localhost:1313/updates/seecph-blog/02-planning/</link>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/updates/seecph-blog/02-planning/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Fog-Carport</title>
+      <link>http://localhost:1313/projects/fog-carport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/projects/fog-carport/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/fog-carport/featured.png" />
+    </item>
+    
+    <item>
+      <title>seeCph Backend API</title>
+      <link>http://localhost:1313/blog/seecph-blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/blog/seecph-blog/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/blog/seecph-blog/featured.png" />
+    </item>
     
   </channel>
 </rss>

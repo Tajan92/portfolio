@@ -3,3 +3,39 @@
     position: relative;
 }
 
+/* Make page body span the exact viewport height */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh; /* Adapt dynamically to mobile browsers */
+}
+
+/* Force main area to fill all free space between header and footer */
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+main > article {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keep profile header pinned to the top */
+main > article > div:first-child {
+  margin-top: 0 !important;
+}
+
+/* Push ONLY the Recent section to the bottom */
+main > article > div:last-child,
+main > article > section:last-child {
+  margin-top: auto !important;
+  padding-top: 2rem;
+}

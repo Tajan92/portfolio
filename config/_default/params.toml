@@ -25,6 +25,7 @@ advertisement = { }
 enableStyledScrollbar = true
 showViews = false
 backgroundCanvas = true
+mainSections = ["updates"]
 
 [buymeacoffee]
 identifier = ""
@@ -82,11 +83,11 @@ showPagination = false
 invertPagination = false
 showReadingTime = false
 showReadingProgress = false
-showTableOfContents = false
+showTableOfContents = true
 showTaxonomies = true
 showCategories = true
 showTags = true
-showCategoriesInSecondaryColor = false
+showCategoriesInSecondaryColor = true
 showAuthorsBadges = false
 showWordCount = false
 showZenMode = false

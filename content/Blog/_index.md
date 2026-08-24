@@ -1,14 +1,11 @@
 ---
 title: "Blogs"
 showHero: true
-
-  showDate: false
-  showAuthor: false
-  invertPagination: true
+showDate: false
+showAuthor: false
+invertPagination: true
 ---
 
 {{< lead >}}
-Select a category below to explore the timeline:
+Select a blog below to explore the timeline:
 {{< /lead >}}
-
-This section contains everything you need to know about Blowfish. If you're new, check out the [Installation]({{< ref "blog/seeCph-blog" >}}) guide to begin or visit the section to see what Blowfish can do.
