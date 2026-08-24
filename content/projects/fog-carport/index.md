@@ -41,3 +41,8 @@ Clean HTML, CSS, and JavaScript creating dynamic SVG vector graphics directly sc
 {{< stats >}}
 {{< stat value="80%" label="JUnit Testing" >}}Up to 80% test coverage.{{< /stat >}}
 {{< /stats >}}
+
+{{< alert icon="circle-info" cardColor="#7c3aed" iconColor="#f1faee" textColor="#f1faee" linkColor="#f1faee" >}}
+See project here _<a href="https://fogcarport.theisrud.dk/" style="color: #f1faee; text-decoration: underline;">Carport Fog</a>_ {{< icon "link" >}}
+
+{{< /alert >}}

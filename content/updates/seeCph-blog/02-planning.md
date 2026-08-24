@@ -1,13 +1,16 @@
 ---
 title: "seeCph: Planning"
 description: "Planning"
+summary: "Analyzing project..."
 date: 2026-08-22
 project: "seecph"
 header: "Planning"
 subheader: "22 august, 2026"
 icon: "list"
-externalUrl: "/blog/seeCph-blog/#planning"
+externalUrl: "blog/seeCph-blog/#planning"
 weight: 2
+categories: ["skill"]
+tags: ["skill"]
 ---
 
-Detailed notes or text for this specific update step...
+Analyzing project...
