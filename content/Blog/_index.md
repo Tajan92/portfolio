@@ -1,8 +1,7 @@
 ---
-title: "Choose a Blog Category"
+title: "Blogs"
 showHero: true
-heroStyle: "background"
-cascade:
+
   showDate: false
   showAuthor: false
   invertPagination: true

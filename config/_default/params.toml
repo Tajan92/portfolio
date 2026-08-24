@@ -1,5 +1,6 @@
 colorScheme = "congo"
 defaultAppearance = "dark"
+defaultBackgroundImage = "_DSC1507.png"
 autoSwitchAppearance = false
 enableA11y = false
 enableSearch = true
@@ -68,7 +69,7 @@ showLikes = false
 showDateOnlyInArticle = false
 showDateUpdated = false
 showAuthor = true
-showHero = true
+showHero = false
 layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = true
 showBreadcrumbs = false

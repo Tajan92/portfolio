@@ -1,7 +1,6 @@
 ---
 title: "seeCph Backend API"
 layout: "simple"
-hero: "featured.png"
 ---
 
 <!-- This tiny block hides the theme's default automatic title header text -->
@@ -20,8 +19,7 @@ hero: "featured.png"
 
 <!-- 1. Project start with github reference -->
 
-{{< timelineItem icon="github" header="Project Start">}}
-{{< keyword icon="github" color="green">}} _Date:_ 21 august, 2026 {{< /keyword >}}
+{{< timelineItem icon="github" header="Project Start" subheader="21 august, 2026">}}
 
 {{< github repo="tajan92/seeCphBackendAPI" showThumbnail=true >}}
 
