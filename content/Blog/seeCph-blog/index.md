@@ -17,4 +17,4 @@ categories: ["Exam Projects", "Web Development"]
 
 # {{< icon "seeCph-logo" >}} seeCph Backend API
 
-{{< timeline-folder >}}
+{{< timeline-folder project="seecph" />}}
