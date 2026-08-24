@@ -8,10 +8,35 @@ $project }} {{ end }}
   .Params.subheader | default "" }} {{ $badge := .Params.badge | default "" }}
   {{ $anchor := $header | urlize }}
 
-  <div id="{{ $anchor }}">
-    {{ printf "{{< timelineItem icon=\"%s\" header=\"%s\" subheader=\"%s\"
-    badge=\"%s\" >}}" $icon $header $subheader $badge | $.Page.RenderString }}
-    {{ .Content }} {{ printf "{{< /timelineItem >}}" | $.Page.RenderString }}
+  <div
+    id="{{ $anchor }}"
+    class="relative pl-8 pb-4 border-l-2 border-neutral-200 dark:border-neutral-700"
+  >
+    <!-- Timeline Node Marker -->
+    <div
+      class="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-primary-500 border-2 border-neutral-100 dark:border-neutral-900"
+    ></div>
+
+    <!-- Header & Metadata -->
+    <div class="flex items-center gap-2 mb-1">
+      <h4 class="text-lg font-semibold my-0">{{ $header }}</h4>
+      {{ if $badge }}
+      <span
+        class="text-xs px-2 py-0.5 rounded bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 font-medium"
+      >
+        {{ $badge }}
+      </span>
+      {{ end }}
+    </div>
+
+    {{ if $subheader }}
+    <div class="text-xs text-neutral-500 dark:text-neutral-400 mb-2">
+      {{ $subheader }}
+    </div>
+    {{ end }}
+
+    <!-- Post Content -->
+    <div class="prose dark:prose-invert text-sm">{{ .Content }}</div>
   </div>
   {{ end }}
 </div>
