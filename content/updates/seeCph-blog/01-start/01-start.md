@@ -9,7 +9,7 @@ subheader: "21 august, 2026"
 icon: "github"
 tags: ["Java", "github"]
 externalUrl: "blog/seecph-blog/#Project-Start"
-weight: 1
+weight: 1000
 ---
 
 {{< github repo="Tajan92/portfolio" showThumbnail=true >}}

@@ -4,7 +4,7 @@ description: "A 2nd-semester exam project by a team of 3 at EK Lyngby, making a 
 layout: "simple"
 tags: ["Java", "CSS", "JavaScript", "PostgresSQL", "Digital Ocean", "github"]
 categories: ["Exam Projects", "Web Development"]
-featureImage: "feature.png"
+featureImage: "featured.png"
 cardView: true
 ---
 
