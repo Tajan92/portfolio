@@ -13,6 +13,6 @@ categories: ["Analyzing"]
 tags: ["User Stories", "Domain Model"]
 ---
 
-Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model seen below, though it's a rough model and probably will evolve doing the project. Specially variables will change a lot.
+Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model seen below, though it's a rough model and probably will evolve doing the project.
 
-![Domain model](domain-model-first-draft.png "Domain model")
+![Domain model](domain-model.png "Domain model 1.0")
