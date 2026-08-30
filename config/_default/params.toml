@@ -1,6 +1,6 @@
 colorScheme = "congo"
 defaultAppearance = "dark"
-defaultBackgroundImage = "_DSC1507.png"
+defaultBackgroundImage = "lofoten-compressed.jpg"
 autoSwitchAppearance = false
 enableA11y = false
 enableSearch = true
@@ -52,7 +52,7 @@ showScrollToTop = true
 
 [homepage]
 layout = "background"
-homepageImage = "lofoten.png"
+homepageImage = "lofoten-compressed.jpg"
 showRecent = true
 showRecentItems = 2
 showMoreLink = false
