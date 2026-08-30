@@ -15,4 +15,4 @@ tags: ["User Stories", "Domain Model"]
 
 Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model seen below, though it's a rough model and probably will evolve doing the project.
 
-![Domain model](domain-model.png "Domain model 1.0")
+![Domain model](domainModel.png "Domain model")
