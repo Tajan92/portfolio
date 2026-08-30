@@ -2,111 +2,111 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Home</title>
-    <link>http://localhost:1313/portfolio/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 22 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Class Diagram</title>
-      <link>http://localhost:1313/portfolio/tags/class-diagram/</link>
+      <link>http://localhost:1313/tags/class-diagram/</link>
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/class-diagram/</guid>
+      <guid>http://localhost:1313/tags/class-diagram/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Domain Model</title>
-      <link>http://localhost:1313/portfolio/tags/domain-model/</link>
+      <link>http://localhost:1313/tags/domain-model/</link>
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/domain-model/</guid>
+      <guid>http://localhost:1313/tags/domain-model/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>JPA</title>
-      <link>http://localhost:1313/portfolio/tags/jpa/</link>
+      <link>http://localhost:1313/tags/jpa/</link>
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/jpa/</guid>
+      <guid>http://localhost:1313/tags/jpa/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>User Stories</title>
-      <link>http://localhost:1313/portfolio/tags/user-stories/</link>
+      <link>http://localhost:1313/tags/user-stories/</link>
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/user-stories/</guid>
+      <guid>http://localhost:1313/tags/user-stories/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Github</title>
-      <link>http://localhost:1313/portfolio/tags/github/</link>
+      <link>http://localhost:1313/tags/github/</link>
       <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/github/</guid>
+      <guid>http://localhost:1313/tags/github/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Java</title>
-      <link>http://localhost:1313/portfolio/tags/java/</link>
+      <link>http://localhost:1313/tags/java/</link>
       <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/java/</guid>
+      <guid>http://localhost:1313/tags/java/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>CSS</title>
-      <link>http://localhost:1313/portfolio/tags/css/</link>
+      <link>http://localhost:1313/tags/css/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/css/</guid>
+      <guid>http://localhost:1313/tags/css/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Digital Ocean</title>
-      <link>http://localhost:1313/portfolio/tags/digital-ocean/</link>
+      <link>http://localhost:1313/tags/digital-ocean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/digital-ocean/</guid>
+      <guid>http://localhost:1313/tags/digital-ocean/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>http://localhost:1313/portfolio/tags/javascript/</link>
+      <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/javascript/</guid>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>PostgresSQL</title>
-      <link>http://localhost:1313/portfolio/tags/postgressql/</link>
+      <link>http://localhost:1313/tags/postgressql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/tags/postgressql/</guid>
+      <guid>http://localhost:1313/tags/postgressql/</guid>
       <description></description>
       
     </item>

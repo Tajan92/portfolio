@@ -15,8 +15,8 @@
 
   
   
-    <title>seeCph: User stories & Domain Model &middot; Home</title>
-    <meta name="title" content="seeCph: User stories & Domain Model &middot; Home">
+    <title>seeCph: Class diagram & JPA &middot; Home</title>
+    <meta name="title" content="seeCph: Class diagram & JPA &middot; Home">
   
 
   
@@ -31,14 +31,14 @@
     
   
   
-    <meta name="description" content="Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model.">
+    <meta name="description" content="Making relations in the architecture more sound.">
   
   
-    <meta name="keywords" content="User Stories,Domain Model,">
+    <meta name="keywords" content="Class Diagram,JPA,">
   
   
   
-  <link rel="canonical" href="http://localhost:1313/updates/seecph-blog/02-planning/">
+  <link rel="canonical" href="http://localhost:1313/blog/seecph-blog/%23jpa/">
   
   
 
@@ -69,22 +69,22 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/updates/seecph-blog/02-planning/">
+  <meta property="og:url" content="http://localhost:1313/blog/seecph-blog/%23jpa/">
 	<meta property="og:site_name" content="Home">
-	<meta property="og:title" content="seeCph: User stories & Domain Model">
-	<meta property="og:description" content="Planning">
+	<meta property="og:title" content="seeCph: Class diagram & JPA">
+	<meta property="og:description" content="JPA">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="updates">
 		<meta property="article:published_time" content="2026-08-22T00:00:00+00:00">
 		<meta property="article:modified_time" content="2026-08-22T00:00:00+00:00">
-		<meta property="article:tag" content="User Stories">
-		<meta property="article:tag" content="Domain Model">
+		<meta property="article:tag" content="Class Diagram">
+		<meta property="article:tag" content="JPA">
 
   
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="seeCph: User stories & Domain Model">
-	<meta name="twitter:description" content="Planning">
+	<meta name="twitter:title" content="seeCph: Class diagram & JPA">
+	<meta name="twitter:description" content="JPA">
 
   
   
@@ -248,11 +248,11 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Updates",
-    "name": "seeCph: User stories \u0026 Domain Model",
-    "headline": "seeCph: User stories \u0026 Domain Model",
-    "description": "Planning",
+    "name": "seeCph: Class diagram \u0026 JPA",
+    "headline": "seeCph: Class diagram \u0026 JPA",
+    "description": "JPA",
     "inLanguage": "en-us",
-    "url" : "http://localhost:1313/updates/seecph-blog/02-planning/",
+    "url" : "http://localhost:1313/blog/seecph-blog/%23jpa/",
     "author" : {
       "@type": "Person",
       "name": "Theis Rud Halkjær",
@@ -264,10 +264,10 @@
     
     "dateModified": "2026-08-22T00:00:00\u002b00:00",
     
-    "keywords": ["User Stories","Domain Model"],
+    "keywords": ["Class Diagram","JPA"],
     
-    "mainEntityOfPage": "http://localhost:1313/updates/seecph-blog/02-planning/",
-    "wordCount":  42 
+    "mainEntityOfPage": "http://localhost:1313/blog/seecph-blog/%23jpa/",
+    "wordCount":  172 
   }]
   </script>
 
@@ -552,7 +552,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        seeCph: User stories & Domain Model
+        seeCph: Class diagram & JPA
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -644,7 +644,7 @@
           
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/user-stories/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/class-diagram/">
                   <span class="flex cursor-pointer">
   
   
@@ -653,7 +653,7 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    User Stories
+    Class Diagram
   </span>
 </span>
 
@@ -663,7 +663,7 @@
           
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/domain-model/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/jpa/">
                   <span class="flex cursor-pointer">
   
   
@@ -672,7 +672,7 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Domain Model
+    JPA
   </span>
 </span>
 
@@ -787,25 +787,95 @@
       
       
       
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents" aria-label="Table of Contents">
+  <ul>
+    <li><a href="#class-diagram">Class Diagram</a></li>
+    <li><a href="#jpa">JPA</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContentsMobile" aria-label="Table of Contents">
+  <ul>
+    <li><a href="#class-diagram">Class Diagram</a></li>
+    <li><a href="#jpa">JPA</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
+      
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model seen below, though it&rsquo;s a rough model and probably will evolve doing the project.</p>
+          
+<h2 class="relative group">Class Diagram
+    <div id="class-diagram" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#class-diagram" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Working from the domain model and user stories, I started creating a class diagram and mapping out the relations between entities.</p>
+<p>While building the class diagram, I coded alongside it — starting with all entities from the domain model to get a better overview and catch anything I might be missing.</p>
+<p>I changed <code>Event</code> to an abstract class, since I wanted to support both one-time and recurring events. In the end I only needed <code>Event</code>, because I decided to store dates in a <code>Set</code> instead of splitting into subclasses.</p>
+<p>After that, I added the <code>ENUMS</code> I needed and filled in their constants.</p>
+
+<h2 class="relative group">JPA
+    <div id="jpa" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#jpa" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Next was wiring up the relations through <strong><em>JPA</em></strong> annotations. I started simple — <code>@OneToOne</code>, <code>@OneToMany</code>, <code>@ManyToMany</code> — and built from there. Two areas needed extra research making annotations for <code>Sets</code> from <code>Collections</code>, and <code>abstract</code> entity classes.</p>
+<p><strong>Sets</strong></p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ElementCollection</span></span></span></code></pre></div></div>
+<p><strong>abstract classes</strong></p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Inheritance</span><span class="p">(</span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InheritanceType</span><span class="p">.</span><span class="na">SINGLE_TABLE</span><span class="p">)</span></span></span></code></pre></div></div>
+<p>Every subclass of an abstract entity gets its own table, keeping the inheritance hierarchy properly represented in the database.</p>
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
     decoding="async"
     fetchpriority="auto"
-    alt="Domain model"
-    width="331"
-    height="646"
-    src="/updates/seecph-blog/02-planning/domainModel.png"
-    srcset="/updates/seecph-blog/02-planning/domainModel.png 800w, /updates/seecph-blog/02-planning/domainModel.png 1280w"
+    alt="Class Diagram"
+    width="573"
+    height="926"
+    src="/blog/seecph-blog/"
+    srcset="/blog/seecph-blog/ 800w, /blog/seecph-blog/ 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
-    data-zoom-src="/updates/seecph-blog/02-planning/domainModel.png"><figcaption>Domain model</figcaption></figure>
+    data-zoom-src="/blog/seecph-blog/"><figcaption>Class Diagram 1.0</figcaption></figure>
 
           
           

@@ -2,43 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Home</title>
-    <link>http://localhost:1313/portfolio/tags/github/</link>
+    <link>http://localhost:1313/tags/github/</link>
     <description>Recent content in Github on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 21 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/portfolio/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>seeCph: Project Start</title>
-      <link>http://localhost:1313/portfolio/updates/seecph-blog/01-start/</link>
+      <link>http://localhost:1313/updates/seecph-blog/01-start/</link>
       <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/updates/seecph-blog/01-start/</guid>
+      <guid>http://localhost:1313/updates/seecph-blog/01-start/</guid>
       <description>Setup of project structure and repository on github</description>
       
     </item>
     
     <item>
       <title>Fog-Carport</title>
-      <link>http://localhost:1313/portfolio/projects/fog-carport/</link>
+      <link>http://localhost:1313/projects/fog-carport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/projects/fog-carport/</guid>
+      <guid>http://localhost:1313/projects/fog-carport/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/portfolio/projects/fog-carport/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/fog-carport/featured.png" />
     </item>
     
     <item>
       <title>seeCph Backend API</title>
-      <link>http://localhost:1313/portfolio/blog/seecph-blog/</link>
+      <link>http://localhost:1313/blog/seecph-blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/blog/seecph-blog/</guid>
+      <guid>http://localhost:1313/blog/seecph-blog/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/portfolio/blog/seecph-blog/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/blog/seecph-blog/featured.png" />
     </item>
     
   </channel>

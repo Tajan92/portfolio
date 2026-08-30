@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Updates on Home</title>
-    <link>http://localhost:1313/portfolio/updates/</link>
+    <link>http://localhost:1313/updates/</link>
     <description>Recent content in Updates on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 22 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/portfolio/updates/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/updates/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>seeCph: Class diagram &amp; JPA</title>
-      <link>http://localhost:1313/portfolio/updates/seecph-blog/03-entities-jpa/</link>
+      <link>http://localhost:1313/updates/seecph-blog/03-entities-jpa/</link>
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/updates/seecph-blog/03-entities-jpa/</guid>
+      <guid>http://localhost:1313/updates/seecph-blog/03-entities-jpa/</guid>
       <description>Making relations in the architecture more sound.</description>
       
     </item>
     
     <item>
       <title>seeCph: User stories &amp; Domain Model</title>
-      <link>http://localhost:1313/portfolio/updates/seecph-blog/02-planning/</link>
+      <link>http://localhost:1313/updates/seecph-blog/02-planning/</link>
       <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/updates/seecph-blog/02-planning/</guid>
+      <guid>http://localhost:1313/updates/seecph-blog/02-planning/</guid>
       <description>Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model.</description>
       
     </item>
     
     <item>
       <title>seeCph: Project Start</title>
-      <link>http://localhost:1313/portfolio/updates/seecph-blog/01-start/</link>
+      <link>http://localhost:1313/updates/seecph-blog/01-start/</link>
       <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/updates/seecph-blog/01-start/</guid>
+      <guid>http://localhost:1313/updates/seecph-blog/01-start/</guid>
       <description>Setup of project structure and repository on github</description>
       
     </item>

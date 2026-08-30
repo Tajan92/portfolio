@@ -20,7 +20,7 @@ github = "https://github.com/Tajan92"
 [[params.author.links]]
 linkedin = "https://www.linkedin.com/in/theis-rud-halkj%C3%A6r-24bbaa92/"
 
-["params.author"]
+[params.author]
 name = "Theis Rud Halkjær"
 email = "theisrud@gmail.com"
 headline = "Developer in progress..."

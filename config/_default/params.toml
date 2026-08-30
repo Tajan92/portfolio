@@ -64,6 +64,8 @@ disableHeroImageFilter = false
 
 
 [article]
+externalLinkForceNewTab = false
+
 showDate = false
 showViews = false
 showLikes = false
@@ -134,3 +136,4 @@ showTableOfContents = false
 groupByYear = false
 cardView = false
 cardViewScreenWidth = false
+

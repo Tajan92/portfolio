@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Home</title>
-    <link>http://localhost:1313/portfolio/projects/</link>
+    <link>http://localhost:1313/projects/</link>
     <description>Recent content in Projects on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
-    <atom:link href="http://localhost:1313/portfolio/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Fog-Carport</title>
-      <link>http://localhost:1313/portfolio/projects/fog-carport/</link>
+      <link>http://localhost:1313/projects/fog-carport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
-      <guid>http://localhost:1313/portfolio/projects/fog-carport/</guid>
+      <guid>http://localhost:1313/projects/fog-carport/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/portfolio/projects/fog-carport/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/fog-carport/featured.png" />
     </item>
     
   </channel>
