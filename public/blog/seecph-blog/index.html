@@ -276,7 +276,7 @@
     "keywords": ["Java","CSS","JavaScript","PostgresSQL","Digital Ocean","github"],
     
     "mainEntityOfPage": "http://localhost:1313/blog/seecph-blog/",
-    "wordCount":  235 
+    "wordCount":  414 
   }]
   </script>
 
@@ -609,6 +609,14 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
 
 
 
@@ -734,8 +742,8 @@
     decoding="async"
     fetchpriority="auto"
     alt="Domain model"
-    width="331"
-    height="646"
+    width="277"
+    height="553"
     src="/updates/seecph-blog/02-planning/domainModel.png"
     srcset="/updates/seecph-blog/02-planning/domainModel.png 800w, /updates/seecph-blog/02-planning/domainModel.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
@@ -766,12 +774,12 @@
       </div>
       
         <h4 class="mt-0">
-          25 august, 2026
+          30 august, 2026
         </h4>
       
       <div class="mb-6">
          
-<h2 class="relative group">Class Diagram
+<h3 class="relative group">Class Diagram
     <div id="class-diagram" class="anchor"></div>
     
     <span
@@ -779,13 +787,13 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#class-diagram" aria-label="Anchor">#</a>
     </span>
     
-</h2>
+</h3>
 <p>Working from the domain model and user stories, I started creating a class diagram and mapping out the relations between entities.</p>
 <p>While building the class diagram, I coded alongside it — starting with all entities from the domain model to get a better overview and catch anything I might be missing.</p>
 <p>I changed <code>Event</code> to an abstract class, since I wanted to support both one-time and recurring events. In the end I only needed <code>Event</code>, because I decided to store dates in a <code>Set</code> instead of splitting into subclasses.</p>
 <p>After that, I added the <code>ENUMS</code> I needed and filled in their constants.</p>
 
-<h2 class="relative group">JPA
+<h3 class="relative group">JPA
     <div id="jpa" class="anchor"></div>
     
     <span
@@ -793,25 +801,98 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#jpa" aria-label="Anchor">#</a>
     </span>
     
-</h2>
+</h3>
 <p>Next was wiring up the relations through <strong><em>JPA</em></strong> annotations. I started simple — <code>@OneToOne</code>, <code>@OneToMany</code>, <code>@ManyToMany</code> — and built from there. Two areas needed extra research making annotations for <code>Sets</code> from <code>Collections</code>, and <code>abstract</code> entity classes.</p>
 <p><strong>Sets</strong></p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ElementCollection</span></span></span></code></pre></div></div>
 <p><strong>abstract classes</strong></p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Inheritance</span><span class="p">(</span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InheritanceType</span><span class="p">.</span><span class="na">SINGLE_TABLE</span><span class="p">)</span></span></span></code></pre></div></div>
-<p>Every subclass of an abstract entity gets its own table, keeping the inheritance hierarchy properly represented in the database.</p>
+<p>Every subclass of an abstract entity goes in the same table, making <code>CRUD</code> operations faster in the database without the need of any <code>JOINS</code>.</p>
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
     decoding="async"
     fetchpriority="auto"
     alt="Class Diagram"
-    width="573"
-    height="926"
+    width="452"
+    height="835"
     src="/updates/seecph-blog/03-entities-jpa/classDiagram.png"
     srcset="/updates/seecph-blog/03-entities-jpa/classDiagram.png 800w, /updates/seecph-blog/03-entities-jpa/classDiagram.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/updates/seecph-blog/03-entities-jpa/classDiagram.png"><figcaption>Class Diagram 1.0</figcaption></figure>
+ 
+      </div>
+    </div>
+  </div>
+</li></div>
+<div id="test">
+
+
+
+
+<li>
+  <div class="flex">
+    <div
+      class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full ltr:-ml-12 rtl:-mr-[79px] mt-5">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4C451.1 117.9 451.1 138.1 438.6 150.6L182.6 406.6C170.1 419.1 149.9 419.1 137.4 406.6L9.372 278.6C-3.124 266.1-3.124 245.9 9.372 233.4C21.87 220.9 42.13 220.9 54.63 233.4L159.1 338.7L393.4 105.4C405.9 92.88 426.1 92.88 438.6 105.4H438.6z"/></svg>
+</span>
+    </div>
+    <div class="block p-6 rounded-lg shadow-2xl flex-1 ms-6 mb-10 break-words">
+      <div class="flex justify-between">
+        
+          <h2 class="mt-0">Test</h2>
+        
+        
+      </div>
+      
+        <h4 class="mt-0">
+          4 september, 2026
+        </h4>
+      
+      <div class="mb-6">
+         <p>This week was about finishing test for my entity DAO&rsquo;s basic <code>CRUD</code> operations.</p>
+<p>To make it possible to test properly, I needed to add exception handling in all <code>CRUD</code> operations. To make this easier and more future proof, I added an <code>abstact generic&lt;T&gt; class</code> to have a jig for all basic operations.</p>
+<p>This will make it easier to maintain the code in the future, both when adding new entities or updating it.</p>
+<p>When making <code>@Test</code> I also updated my entities with <code>equals()</code> and <code>hashcode()</code>, <code>@Override</code> methods to compare objects in test.</p>
+<p>Also added <code>@PrePersist</code> and <code>@PreUpdate</code> methods to set some variables from others, which will make it easier to maintain by having service methods directly in its own class.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@PrePersist</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">prePersist</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isBefore</span><span class="p">(</span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isAfter</span><span class="p">(</span><span class="n">endDate</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span></span></span></code></pre></div></div>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@PreUpdate</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preUpdate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isBefore</span><span class="p">(</span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isAfter</span><span class="p">(</span><span class="n">endDate</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span></span></span></code></pre></div></div>
+<p>Refactoring with a generic abstract class with exception handling was challenging, but satisfying when done &#x2705;</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md shadow" style="background-color: #58585850"
+  
+  >
+  <span
+    
+      class="pe-3 flex items-center" style="color: #efe05baa"
+    
+    >
+    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg></span>
+  </span>
+
+  <span
+    
+      style="color: #fcfcfc"
+    
+    ><strong>Next:</strong> I&rsquo;ll be working on gathering my first Data from an API call</span>
+</div>
+
  
       </div>
     </div>

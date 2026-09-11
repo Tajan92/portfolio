@@ -9,12 +9,22 @@
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 22 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/updates/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/updates/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>seeCph: Test and Refactoring DAO&#39;s</title>
+      <link>http://localhost:1313/updates/seecph-blog/04-testandrefactoring/</link>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/updates/seecph-blog/04-testandrefactoring/</guid>
+      <description>This week was all getting test ready for all basic CRUD operations for all DAOS. For that i also needed to add exceptions to my DAO methods. I decided to do a big refactoring and make a generic Jig with all the basic CRUD operations for easier maintainance further on.</description>
+      
+    </item>
     
     <item>
       <title>seeCph: Class diagram &amp; JPA</title>
       <link>http://localhost:1313/updates/seecph-blog/03-entities-jpa/</link>
-      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
       <guid>http://localhost:1313/updates/seecph-blog/03-entities-jpa/</guid>
       <description>Making relations in the architecture more sound.</description>
@@ -24,7 +34,7 @@
     <item>
       <title>seeCph: User stories &amp; Domain Model</title>
       <link>http://localhost:1313/updates/seecph-blog/02-planning/</link>
-      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
       <guid>http://localhost:1313/updates/seecph-blog/02-planning/</guid>
       <description>Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model.</description>
@@ -38,6 +48,16 @@
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
       <guid>http://localhost:1313/updates/seecph-blog/01-start/</guid>
       <description>Setup of project structure and repository on github</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/updates/template/template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/updates/template/template/</guid>
+      <description></description>
       
     </item>
     

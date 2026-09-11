@@ -76,8 +76,8 @@
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="updates">
-		<meta property="article:published_time" content="2026-08-22T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-08-22T00:00:00+00:00">
+		<meta property="article:published_time" content="2026-08-30T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-08-30T00:00:00+00:00">
 		<meta property="article:tag" content="Class Diagram">
 		<meta property="article:tag" content="JPA">
 
@@ -259,15 +259,15 @@
       "sameAs": ["theisrud@gmail.com", "https://github.com/Tajan92", "https://www.linkedin.com/in/theis-rud-halkj%C3%A6r-24bbaa92/"]
     },
     "copyrightYear": "2026",
-    "dateCreated": "2026-08-22T00:00:00\u002b00:00",
-    "datePublished": "2026-08-22T00:00:00\u002b00:00",
+    "dateCreated": "2026-08-30T00:00:00\u002b00:00",
+    "datePublished": "2026-08-30T00:00:00\u002b00:00",
     
-    "dateModified": "2026-08-22T00:00:00\u002b00:00",
+    "dateModified": "2026-08-30T00:00:00\u002b00:00",
     
     "keywords": ["Class Diagram","JPA"],
     
     "mainEntityOfPage": "http://localhost:1313/updates/seecph-blog/03-entities-jpa/",
-    "wordCount":  172 
+    "wordCount":  177 
   }]
   </script>
 
@@ -801,8 +801,12 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents" aria-label="Table of Contents">
   <ul>
-    <li><a href="#class-diagram">Class Diagram</a></li>
-    <li><a href="#jpa">JPA</a></li>
+    <li>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+        <li><a href="#jpa">JPA</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -816,8 +820,12 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContentsMobile" aria-label="Table of Contents">
   <ul>
-    <li><a href="#class-diagram">Class Diagram</a></li>
-    <li><a href="#jpa">JPA</a></li>
+    <li>
+      <ul>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+        <li><a href="#jpa">JPA</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -835,7 +843,7 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">Class Diagram
+<h3 class="relative group">Class Diagram
     <div id="class-diagram" class="anchor"></div>
     
     <span
@@ -843,13 +851,13 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#class-diagram" aria-label="Anchor">#</a>
     </span>
     
-</h2>
+</h3>
 <p>Working from the domain model and user stories, I started creating a class diagram and mapping out the relations between entities.</p>
 <p>While building the class diagram, I coded alongside it — starting with all entities from the domain model to get a better overview and catch anything I might be missing.</p>
 <p>I changed <code>Event</code> to an abstract class, since I wanted to support both one-time and recurring events. In the end I only needed <code>Event</code>, because I decided to store dates in a <code>Set</code> instead of splitting into subclasses.</p>
 <p>After that, I added the <code>ENUMS</code> I needed and filled in their constants.</p>
 
-<h2 class="relative group">JPA
+<h3 class="relative group">JPA
     <div id="jpa" class="anchor"></div>
     
     <span
@@ -857,21 +865,21 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#jpa" aria-label="Anchor">#</a>
     </span>
     
-</h2>
+</h3>
 <p>Next was wiring up the relations through <strong><em>JPA</em></strong> annotations. I started simple — <code>@OneToOne</code>, <code>@OneToMany</code>, <code>@ManyToMany</code> — and built from there. Two areas needed extra research making annotations for <code>Sets</code> from <code>Collections</code>, and <code>abstract</code> entity classes.</p>
 <p><strong>Sets</strong></p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ElementCollection</span></span></span></code></pre></div></div>
 <p><strong>abstract classes</strong></p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Inheritance</span><span class="p">(</span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InheritanceType</span><span class="p">.</span><span class="na">SINGLE_TABLE</span><span class="p">)</span></span></span></code></pre></div></div>
-<p>Every subclass of an abstract entity gets its own table, keeping the inheritance hierarchy properly represented in the database.</p>
+<p>Every subclass of an abstract entity goes in the same table, making <code>CRUD</code> operations faster in the database without the need of any <code>JOINS</code>.</p>
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
     decoding="async"
     fetchpriority="auto"
     alt="Class Diagram"
-    width="573"
-    height="926"
+    width="452"
+    height="835"
     src="/updates/seecph-blog/03-entities-jpa/classDiagram.png"
     srcset="/updates/seecph-blog/03-entities-jpa/classDiagram.png 800w, /updates/seecph-blog/03-entities-jpa/classDiagram.png 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"

@@ -2,7 +2,7 @@
 title: "seeCph: User stories & Domain Model"
 description: "Planning"
 summary: "Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model."
-date: 2026-08-22
+date: 2026-08-25
 project: "seecph"
 header: "Planning"
 subheader: "25 august, 2026"
