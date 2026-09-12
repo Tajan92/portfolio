@@ -15,8 +15,8 @@
 
   
   
-    <title>seeCph: Test and Refactoring DAO&#39;s &middot; Home</title>
-    <meta name="title" content="seeCph: Test and Refactoring DAO&#39;s &middot; Home">
+    <title>seeCph: Testing and Refactoring DAOs &middot; Home</title>
+    <meta name="title" content="seeCph: Testing and Refactoring DAOs &middot; Home">
   
 
   
@@ -31,7 +31,7 @@
     
   
   
-    <meta name="description" content="This week was all getting test ready for all basic CRUD operations for all DAOS. For that i also needed to add exceptions to my DAO methods. I decided to do a big refactoring and make a generic Jig with all the basic CRUD operations for easier maintainance further on.">
+    <meta name="description" content="This week was all about getting test-ready for basic CRUD operations across all DAOs. For that, I also needed to add exceptions to my DAO methods. I decided to do a big refactoring and create a generic jig with all basic CRUD operations for easier maintenance in the future.">
   
   
     <meta name="keywords" content=",">
@@ -71,8 +71,8 @@
   
   <meta property="og:url" content="http://localhost:1313/updates/seecph-blog/04-testandrefactoring/">
 	<meta property="og:site_name" content="Home">
-	<meta property="og:title" content="seeCph: Test and Refactoring DAO&#39;s">
-	<meta property="og:description" content="Test for basic CRUD operations and refactoring the whole DAO setup.">
+	<meta property="og:title" content="seeCph: Testing and Refactoring DAOs">
+	<meta property="og:description" content="Tests for basic CRUD operations and refactoring the whole DAO setup.">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="updates">
@@ -81,8 +81,8 @@
 
   
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="seeCph: Test and Refactoring DAO&#39;s">
-	<meta name="twitter:description" content="Test for basic CRUD operations and refactoring the whole DAO setup.">
+	<meta name="twitter:title" content="seeCph: Testing and Refactoring DAOs">
+	<meta name="twitter:description" content="Tests for basic CRUD operations and refactoring the whole DAO setup.">
 
   
   
@@ -246,9 +246,9 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Updates",
-    "name": "seeCph: Test and Refactoring DAO\u0027s",
-    "headline": "seeCph: Test and Refactoring DAO\u0027s",
-    "description": "Test for basic CRUD operations and refactoring the whole DAO setup.",
+    "name": "seeCph: Testing and Refactoring DAOs",
+    "headline": "seeCph: Testing and Refactoring DAOs",
+    "description": "Tests for basic CRUD operations and refactoring the whole DAO setup.",
     "inLanguage": "en-us",
     "url" : "http://localhost:1313/updates/seecph-blog/04-testandrefactoring/",
     "author" : {
@@ -265,7 +265,7 @@
     "keywords": [""],
     
     "mainEntityOfPage": "http://localhost:1313/updates/seecph-blog/04-testandrefactoring/",
-    "wordCount":  170 
+    "wordCount":  214 
   }]
   </script>
 
@@ -550,7 +550,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        seeCph: Test and Refactoring DAO's
+        seeCph: Testing and Refactoring DAOs
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -751,11 +751,11 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>This week was about finishing test for my entity DAO&rsquo;s basic <code>CRUD</code> operations.</p>
-<p>To make it possible to test properly, I needed to add exception handling in all <code>CRUD</code> operations. To make this easier and more future proof, I added an <code>abstact generic&lt;T&gt; class</code> to have a jig for all basic operations.</p>
-<p>This will make it easier to maintain the code in the future, both when adding new entities or updating it.</p>
-<p>When making <code>@Test</code> I also updated my entities with <code>equals()</code> and <code>hashcode()</code>, <code>@Override</code> methods to compare objects in test.</p>
-<p>Also added <code>@PrePersist</code> and <code>@PreUpdate</code> methods to set some variables from others, which will make it easier to maintain by having service methods directly in its own class.</p>
+          <p>This week was about finishing tests for my entity DAOs&rsquo; basic <code>CRUD</code> operations.</p>
+<p>To make it possible to test properly, I needed to add exception handling to all <code>CRUD</code> operations. To make this easier and more future-proof, I added an <code>abstract generic &lt;T&gt; class</code> with all basic operations.</p>
+<p>This will make it easier to maintain the code in the future, both when adding new entities or updating existing ones.</p>
+<p>When writing the <code>@Test</code>s, I also updated my entities with overridden <code>equals()</code> and <code>hashCode()</code> methods to compare objects in the tests.</p>
+<p>I also added <code>@PrePersist</code> and <code>@PreUpdate</code> methods to set certain variables based on others, which simplifies maintenance by keeping entity lifecycle logic directly in its own class.</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@PrePersist</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">prePersist</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isBefore</span><span class="p">(</span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isAfter</span><span class="p">(</span><span class="n">endDate</span><span class="p">);</span><span class="w">
@@ -764,7 +764,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preUpdate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isBefore</span><span class="p">(</span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isAfter</span><span class="p">(</span><span class="n">endDate</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span></span></span></code></pre></div></div>
-<p>Refactoring with a generic abstract class with exception handling was challenging, but satisfying when done &#x2705;</p>
+<p>Refactoring with a generic abstract class with exception handling was challenging, but satisfying when it was done &#x2705;</p>
+<p><strong>IntegrationTests</strong> for <code>Event</code>, <code>Advert</code> and all <code>users</code> took a big effort to keep track of all relations and getting them right. But it helped to find some flaws in my code, to persist, update and delete everything the way I wanted it to behave.</p>
 
   
   

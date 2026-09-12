@@ -267,7 +267,7 @@
     "keywords": ["Class Diagram","JPA"],
     
     "mainEntityOfPage": "http://localhost:1313/updates/seecph-blog/03-entities-jpa/",
-    "wordCount":  177 
+    "wordCount":  178 
   }]
   </script>
 
@@ -854,7 +854,7 @@
 </h3>
 <p>Working from the domain model and user stories, I started creating a class diagram and mapping out the relations between entities.</p>
 <p>While building the class diagram, I coded alongside it — starting with all entities from the domain model to get a better overview and catch anything I might be missing.</p>
-<p>I changed <code>Event</code> to an abstract class, since I wanted to support both one-time and recurring events. In the end I only needed <code>Event</code>, because I decided to store dates in a <code>Set</code> instead of splitting into subclasses.</p>
+<p>I changed <code>Event</code> to an abstract class because I wanted to support both one-time and recurring events. In the end, I only needed <code>Event</code> because I decided to store dates in a <code>Set</code> instead of splitting into subclasses.</p>
 <p>After that, I added the <code>ENUMS</code> I needed and filled in their constants.</p>
 
 <h3 class="relative group">JPA
@@ -866,12 +866,12 @@
     </span>
     
 </h3>
-<p>Next was wiring up the relations through <strong><em>JPA</em></strong> annotations. I started simple — <code>@OneToOne</code>, <code>@OneToMany</code>, <code>@ManyToMany</code> — and built from there. Two areas needed extra research making annotations for <code>Sets</code> from <code>Collections</code>, and <code>abstract</code> entity classes.</p>
+<p>Next was wiring up the relations through <strong><em>JPA</em></strong> annotations. I started simple — <code>@OneToOne</code>, <code>@OneToMany</code>, <code>@ManyToMany</code> — and built from there. Two areas needed extra research: making annotations for <code>Sets</code> from <code>Collections</code>, and handling <code>abstract</code> entity classes.</p>
 <p><strong>Sets</strong></p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ElementCollection</span></span></span></code></pre></div></div>
 <p><strong>abstract classes</strong></p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Inheritance</span><span class="p">(</span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InheritanceType</span><span class="p">.</span><span class="na">SINGLE_TABLE</span><span class="p">)</span></span></span></code></pre></div></div>
-<p>Every subclass of an abstract entity goes in the same table, making <code>CRUD</code> operations faster in the database without the need of any <code>JOINS</code>.</p>
+<p>Every subclass of an abstract entity goes in the same table, making <code>CRUD</code> operations faster in the database without the need for any <code>JOINS</code>.</p>
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"

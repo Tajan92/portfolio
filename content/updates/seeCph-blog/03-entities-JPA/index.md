@@ -19,13 +19,13 @@ Working from the domain model and user stories, I started creating a class diagr
 
 While building the class diagram, I coded alongside it — starting with all entities from the domain model to get a better overview and catch anything I might be missing.
 
-I changed `Event` to an abstract class, since I wanted to support both one-time and recurring events. In the end I only needed `Event`, because I decided to store dates in a `Set` instead of splitting into subclasses.
+I changed `Event` to an abstract class because I wanted to support both one-time and recurring events. In the end, I only needed `Event` because I decided to store dates in a `Set` instead of splitting into subclasses.
 
 After that, I added the `ENUMS` I needed and filled in their constants.
 
 ### JPA
 
-Next was wiring up the relations through **_JPA_** annotations. I started simple — `@OneToOne`, `@OneToMany`, `@ManyToMany` — and built from there. Two areas needed extra research making annotations for `Sets` from `Collections`, and `abstract` entity classes.
+Next was wiring up the relations through **_JPA_** annotations. I started simple — `@OneToOne`, `@OneToMany`, `@ManyToMany` — and built from there. Two areas needed extra research: making annotations for `Sets` from `Collections`, and handling `abstract` entity classes.
 
 **Sets**
 
@@ -39,6 +39,6 @@ Next was wiring up the relations through **_JPA_** annotations. I started simple
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 ```
 
-Every subclass of an abstract entity goes in the same table, making `CRUD` operations faster in the database without the need of any `JOINS`.
+Every subclass of an abstract entity goes in the same table, making `CRUD` operations faster in the database without the need for any `JOINS`.
 
 ![Class Diagram](classDiagram.png "Class Diagram 1.0")

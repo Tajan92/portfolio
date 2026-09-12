@@ -32,7 +32,7 @@
   
   
   
-    <meta name="keywords" content="Java,CSS,JavaScript,PostgresSQL,Digital Ocean,github,">
+    <meta name="keywords" content="Java,Postgres,Digital Ocean,github,">
   
   
   
@@ -74,9 +74,7 @@
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:tag" content="Java">
-		<meta property="article:tag" content="CSS">
-		<meta property="article:tag" content="JavaScript">
-		<meta property="article:tag" content="PostgresSQL">
+		<meta property="article:tag" content="Postgres">
 		<meta property="article:tag" content="Digital Ocean">
 		<meta property="article:tag" content="Github">
 		<meta property="og:image" content="http://localhost:1313/blog/seecph-blog/featured.png">
@@ -273,10 +271,10 @@
     
     
     
-    "keywords": ["Java","CSS","JavaScript","PostgresSQL","Digital Ocean","github"],
+    "keywords": ["Java","Postgres","Digital Ocean","github"],
     
     "mainEntityOfPage": "http://localhost:1313/blog/seecph-blog/",
-    "wordCount":  414 
+    "wordCount":  494 
   }]
   </script>
 
@@ -735,7 +733,8 @@
         </h4>
       
       <div class="mb-6">
-         <p>Making user stories to get a better grasp of the projects and make it easier to analyze further on. First in form of a domain model seen below, though it&rsquo;s a rough model and probably will evolve doing the project.</p>
+         <p>Creating user stories helps establish a clearer grasp of the project scope and makes future analysis much more straightforward. I started by mapping out a rough initial domain model, keeping in mind that it will naturally evolve as the project progresses.</p>
+<p>The primary focus is identifying the core entities, their relationships, and the key interactions users will have with the system. This foundation ensures that subsequent architectural decisions and database designs align with actual requirements.</p>
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -790,7 +789,7 @@
 </h3>
 <p>Working from the domain model and user stories, I started creating a class diagram and mapping out the relations between entities.</p>
 <p>While building the class diagram, I coded alongside it — starting with all entities from the domain model to get a better overview and catch anything I might be missing.</p>
-<p>I changed <code>Event</code> to an abstract class, since I wanted to support both one-time and recurring events. In the end I only needed <code>Event</code>, because I decided to store dates in a <code>Set</code> instead of splitting into subclasses.</p>
+<p>I changed <code>Event</code> to an abstract class because I wanted to support both one-time and recurring events. In the end, I only needed <code>Event</code> because I decided to store dates in a <code>Set</code> instead of splitting into subclasses.</p>
 <p>After that, I added the <code>ENUMS</code> I needed and filled in their constants.</p>
 
 <h3 class="relative group">JPA
@@ -802,12 +801,12 @@
     </span>
     
 </h3>
-<p>Next was wiring up the relations through <strong><em>JPA</em></strong> annotations. I started simple — <code>@OneToOne</code>, <code>@OneToMany</code>, <code>@ManyToMany</code> — and built from there. Two areas needed extra research making annotations for <code>Sets</code> from <code>Collections</code>, and <code>abstract</code> entity classes.</p>
+<p>Next was wiring up the relations through <strong><em>JPA</em></strong> annotations. I started simple — <code>@OneToOne</code>, <code>@OneToMany</code>, <code>@ManyToMany</code> — and built from there. Two areas needed extra research: making annotations for <code>Sets</code> from <code>Collections</code>, and handling <code>abstract</code> entity classes.</p>
 <p><strong>Sets</strong></p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ElementCollection</span></span></span></code></pre></div></div>
 <p><strong>abstract classes</strong></p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Inheritance</span><span class="p">(</span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InheritanceType</span><span class="p">.</span><span class="na">SINGLE_TABLE</span><span class="p">)</span></span></span></code></pre></div></div>
-<p>Every subclass of an abstract entity goes in the same table, making <code>CRUD</code> operations faster in the database without the need of any <code>JOINS</code>.</p>
+<p>Every subclass of an abstract entity goes in the same table, making <code>CRUD</code> operations faster in the database without the need for any <code>JOINS</code>.</p>
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -846,15 +845,15 @@
       </div>
       
         <h4 class="mt-0">
-          4 september, 2026
+          4 September 2026
         </h4>
       
       <div class="mb-6">
-         <p>This week was about finishing test for my entity DAO&rsquo;s basic <code>CRUD</code> operations.</p>
-<p>To make it possible to test properly, I needed to add exception handling in all <code>CRUD</code> operations. To make this easier and more future proof, I added an <code>abstact generic&lt;T&gt; class</code> to have a jig for all basic operations.</p>
-<p>This will make it easier to maintain the code in the future, both when adding new entities or updating it.</p>
-<p>When making <code>@Test</code> I also updated my entities with <code>equals()</code> and <code>hashcode()</code>, <code>@Override</code> methods to compare objects in test.</p>
-<p>Also added <code>@PrePersist</code> and <code>@PreUpdate</code> methods to set some variables from others, which will make it easier to maintain by having service methods directly in its own class.</p>
+         <p>This week was about finishing tests for my entity DAOs&rsquo; basic <code>CRUD</code> operations.</p>
+<p>To make it possible to test properly, I needed to add exception handling to all <code>CRUD</code> operations. To make this easier and more future-proof, I added an <code>abstract generic &lt;T&gt; class</code> with all basic operations.</p>
+<p>This will make it easier to maintain the code in the future, both when adding new entities or updating existing ones.</p>
+<p>When writing the <code>@Test</code>s, I also updated my entities with overridden <code>equals()</code> and <code>hashCode()</code> methods to compare objects in the tests.</p>
+<p>I also added <code>@PrePersist</code> and <code>@PreUpdate</code> methods to set certain variables based on others, which simplifies maintenance by keeping entity lifecycle logic directly in its own class.</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@PrePersist</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">prePersist</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isBefore</span><span class="p">(</span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isAfter</span><span class="p">(</span><span class="n">endDate</span><span class="p">);</span><span class="w">
@@ -863,7 +862,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preUpdate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isBefore</span><span class="p">(</span><span class="n">startDate</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">isAfter</span><span class="p">(</span><span class="n">endDate</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span></span></span></code></pre></div></div>
-<p>Refactoring with a generic abstract class with exception handling was challenging, but satisfying when done &#x2705;</p>
+<p>Refactoring with a generic abstract class with exception handling was challenging, but satisfying when it was done &#x2705;</p>
+<p><strong>IntegrationTests</strong> for <code>Event</code>, <code>Advert</code> and all <code>users</code> took a big effort to keep track of all relations and getting them right. But it helped to find some flaws in my code, to persist, update and delete everything the way I wanted it to behave.</p>
 
   
   

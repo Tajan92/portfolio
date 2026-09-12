@@ -102,6 +102,16 @@
     </item>
     
     <item>
+      <title>Postgres</title>
+      <link>http://localhost:1313/tags/postgres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/tags/postgres/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>PostgresSQL</title>
       <link>http://localhost:1313/tags/postgressql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

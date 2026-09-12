@@ -1,8 +1,8 @@
 ---
 title: "seeCph Backend API"
 layout: "simple"
-tags: ["Java", "CSS", "JavaScript", "PostgresSQL", "Digital Ocean", "github"]
-categories: ["Exam Projects", "Web Development"]
+tags: ["Java", "Postgres", "Digital Ocean", "github"]
+categories: ["Exam Project", "Web Development"]
 ---
 
 <!-- This tiny block hides the theme's default automatic title header text -->

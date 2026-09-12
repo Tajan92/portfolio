@@ -32,6 +32,16 @@
     </item>
     
     <item>
+      <title>Exam Project</title>
+      <link>http://localhost:1313/categories/exam-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/categories/exam-project/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Exam Projects</title>
       <link>http://localhost:1313/categories/exam-projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

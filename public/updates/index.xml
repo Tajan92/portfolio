@@ -12,12 +12,12 @@
     <lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/updates/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>seeCph: Test and Refactoring DAO&#39;s</title>
+      <title>seeCph: Testing and Refactoring DAOs</title>
       <link>http://localhost:1313/updates/seecph-blog/04-testandrefactoring/</link>
       <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
       <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
       <guid>http://localhost:1313/updates/seecph-blog/04-testandrefactoring/</guid>
-      <description>This week was all getting test ready for all basic CRUD operations for all DAOS. For that i also needed to add exceptions to my DAO methods. I decided to do a big refactoring and make a generic Jig with all the basic CRUD operations for easier maintainance further on.</description>
+      <description>This week was all about getting test-ready for basic CRUD operations across all DAOs. For that, I also needed to add exceptions to my DAO methods. I decided to do a big refactoring and create a generic jig with all basic CRUD operations for easier maintenance in the future.</description>
       
     </item>
     
