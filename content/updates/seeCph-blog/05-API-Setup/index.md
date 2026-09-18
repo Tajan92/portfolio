@@ -2,7 +2,7 @@
 title: "seeCph: Ticket Master API"
 description: "Fetching data from Ticket Master API"
 summary: "Fetching data from Ticket Master API and converting received json file into a DTO. After this using a converter to convert to entity and persist to databse."
-date: 2026-08-22
+date: 2026-09-18
 project: "seeCph"
 header: "API-setup"
 subheader: "18 september, 2026"
