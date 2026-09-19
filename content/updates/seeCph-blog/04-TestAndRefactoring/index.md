@@ -40,7 +40,3 @@ I also added `@PrePersist` and `@PreUpdate` methods to set certain variables bas
 Refactoring with a generic abstract class with exception handling was challenging, but satisfying when it was done :white_check_mark:
 
 **IntegrationTests** for `Event`, `Advert` and all `users` took a big effort to keep track of all relations and getting them right. But it helped to find some flaws in my code, to persist, update and delete everything the way I wanted it to behave.
-
-{{< alert icon="bell" cardColor="#58585850" iconColor="#efe05baa" textColor="#fcfcfc" >}}
-**Next:** I'll be working on gathering my first Data from an API call
-{{< /alert >}}

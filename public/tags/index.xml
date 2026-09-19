@@ -9,7 +9,27 @@
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
-    <lastBuildDate>Sun, 30 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DTO</title>
+      <link>http://localhost:1313/tags/dto/</link>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/tags/dto/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Json</title>
+      <link>http://localhost:1313/tags/json/</link>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/tags/json/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Class Diagram</title>

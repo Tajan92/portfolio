@@ -9,7 +9,17 @@
     <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
     <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
     <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>seeCph: Ticket Master API</title>
+      <link>http://localhost:1313/updates/seecph-blog/05-api-setup/</link>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:1313/updates/seecph-blog/05-api-setup/</guid>
+      <description>Fetching data from Ticket Master API and converting received json file into a DTO. After this using a converter to convert to entity and persist to databse.</description>
+      
+    </item>
     
     <item>
       <title>seeCph: Testing and Refactoring DAOs</title>
