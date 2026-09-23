@@ -3,7 +3,7 @@ title: "seeCph: "
 description: ""
 summary: ""
 date: 2026-08-22
-project: "seecph"
+project: ""
 header: "Header"
 subheader: "25 august, 2026"
 icon: "list"

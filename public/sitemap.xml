@@ -27,6 +27,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/log/seecph-blog/#header</loc>
+    <lastmod>2026-08-22T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/log/seecph-blog/#Project-Start</loc>
     <lastmod>2026-08-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -41,11 +47,6 @@
   <url>
     <loc>http://localhost:1313/updates/</loc>
     <lastmod>2026-09-18T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/updates/template/template/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

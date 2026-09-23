@@ -31,6 +31,8 @@
     
   
   
+    <meta name="description" content="Backend API project for exam">
+  
   
     <meta name="keywords" content="Java,Postgres,Digital Ocean,github,">
   
@@ -70,6 +72,7 @@
   <meta property="og:url" content="http://localhost:1313/blog/seecph-blog/">
 	<meta property="og:site_name" content="Home">
 	<meta property="og:title" content="seeCph Backend API">
+	<meta property="og:description" content="Backend API project for exam">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
@@ -83,6 +86,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:image" content="http://localhost:1313/blog/seecph-blog/featured.png">
 	<meta name="twitter:title" content="seeCph Backend API">
+	<meta name="twitter:description" content="Backend API project for exam">
 
   
   
@@ -263,6 +267,7 @@
     "author" : {
       "@type": "Person",
       "name": "Theis Rud Halkjær",
+      "image": "http://localhost:1313/profil.png",
       "sameAs": ["theisrud@gmail.com", "https://github.com/Tajan92", "https://www.linkedin.com/in/theis-rud-halkj%C3%A6r-24bbaa92/"]
     },
     
@@ -274,7 +279,7 @@
     "keywords": ["Java","Postgres","Digital Ocean","github"],
     
     "mainEntityOfPage": "http://localhost:1313/blog/seecph-blog/",
-    "wordCount":  481 
+    "wordCount":  809 
   }]
   </script>
 
@@ -615,6 +620,22 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
 
 
 
@@ -752,6 +773,43 @@
     </div>
   </div>
 </li></div>
+<div id="header">
+
+
+
+
+<li>
+  <div class="flex">
+    <div
+      class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full ltr:-ml-12 rtl:-mr-[79px] mt-5">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+</span>
+    </div>
+    <div class="block p-6 rounded-lg shadow-2xl flex-1 ms-6 mb-10 break-words">
+      <div class="flex justify-between">
+        
+          <h2 class="mt-0">Header</h2>
+        
+        
+      </div>
+      
+        <h4 class="mt-0">
+          25 august, 2026
+        </h4>
+      
+      <div class="mb-6">
+         <p>Each weekly post should briefly cover</p>
+<p>What did I add this week?
+Which new technology did I use?
+Why did I structure it this way?
+What worked well?
+What was difficult or confusing?
+What would I improve next time?</p>
+ 
+      </div>
+    </div>
+  </div>
+</li></div>
 <div id="jpa">
 
 
@@ -864,6 +922,77 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span></span></span></code></pre></div></div>
 <p>Refactoring with a generic abstract class with exception handling was challenging, but satisfying when it was done &#x2705;</p>
 <p><strong>IntegrationTests</strong> for <code>Event</code>, <code>Advert</code> and all <code>users</code> took a big effort to keep track of all relations and getting them right. But it helped to find some flaws in my code, to persist, update and delete everything the way I wanted it to behave.</p>
+ 
+      </div>
+    </div>
+  </div>
+</li></div>
+<div id="api-setup">
+
+
+
+
+<li>
+  <div class="flex">
+    <div
+      class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full ltr:-ml-12 rtl:-mr-[79px] mt-5">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+</span>
+    </div>
+    <div class="block p-6 rounded-lg shadow-2xl flex-1 ms-6 mb-10 break-words">
+      <div class="flex justify-between">
+        
+          <h2 class="mt-0">API Setup</h2>
+        
+        
+      </div>
+      
+        <h4 class="mt-0">
+          18 september, 2026
+        </h4>
+      
+      <div class="mb-6">
+         <p>It&rsquo;s was time to add <code>API</code> data, so have worked on setting up a call that gets data from Ticket Master and only events happening in Copenhagen, Denmark. Then using the received json file turn convert it to dto and then convert it to an entity, to persist it to the database.</p>
+<p>Using <code>ObjectMapper</code> and <code>@JsonIgnoreProperties</code> is pretty new libaries to use. It makes it so much easier to fetch data and convert into dto.</p>
+<p>For it to work, the dto classes / records have to be set up the right way, so it mirrors the data from json with the data you want. When setup right, it kinda feels like magic. Just make sure the dto &ldquo;tree&rdquo; starts from where you collect data.</p>
+<p>It took some time to figure out exactly what data i wanted and how it should be represented in my entity. Cause I had to make it generic enough for it, to also work for other API&rsquo;s and data fetching, while still getting relevant data to use.</p>
+<p>Wished I used more time for groundwork to fugure out the variables for my <code>Event</code> entity.</p>
+<p>Found an easy way to choose category from my <code>ENUM</code> directly when the dto is made, that makes it much easier in my service class TicketMasterConverter or any new ones. But also if I need to change anything it my <code>ENUM</code> I only have to do it in one place when I don&rsquo;t have any switches.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@JsonCreator</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">EventCategory</span><span class="w"> </span><span class="nf">fromLabel</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">label</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">label</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">OTHERS</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">events</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">label</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">(),</span><span class="w"> </span><span class="n">OTHERS</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span></span></span></code></pre></div></div>
+<p>And then every <code>ENUM</code> has String label to catch and give the right one.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md shadow" style="background-color: #58585850"
+  
+  >
+  <span
+    
+      class="pe-3 flex items-center" style="color: #efe05baa"
+    
+    >
+    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg></span>
+  </span>
+
+  <span
+    
+      style="color: #fcfcfc"
+    
+    ><strong>Next:</strong> User validation, register, login etc.</span>
+</div>
+
  
       </div>
     </div>

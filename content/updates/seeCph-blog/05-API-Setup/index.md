@@ -4,7 +4,7 @@ description: "Fetching data from Ticket Master API"
 summary: "Fetching data from Ticket Master API and converting received json file into a DTO. After this using a converter to convert to entity and persist to databse."
 date: 2026-09-18
 project: "seecph"
-header: "APIsetup"
+header: "API Setup"
 subheader: "18 september, 2026"
 icon: "list"
 externalUrl: "blog/seecph-blog/#apisetup"
@@ -15,7 +15,7 @@ tags: ["json", "DTO"]
 
 It's was time to add `API` data, so have worked on setting up a call that gets data from Ticket Master and only events happening in Copenhagen, Denmark. Then using the received json file turn convert it to dto and then convert it to an entity, to persist it to the database.
 
-Using `ÒbjectMapper` and `@JsonIgnoreProperties` is pretty new libaries to use. It makes it so much easier to fetch data and convert into dto.
+Using `ObjectMapper` and `@JsonIgnoreProperties` is pretty new libaries to use. It makes it so much easier to fetch data and convert into dto.
 
 For it to work, the dto classes / records have to be set up the right way, so it mirrors the data from json with the data you want. When setup right, it kinda feels like magic. Just make sure the dto "tree" starts from where you collect data.
 

@@ -3,6 +3,7 @@ title: "seeCph Backend API"
 layout: "simple"
 tags: ["Java", "Postgres", "Digital Ocean", "github"]
 categories: ["Exam Project", "Web Development"]
+summary: "Backend API project for exam"
 ---
 
 <!-- This tiny block hides the theme's default automatic title header text -->
