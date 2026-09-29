@@ -42,6 +42,8 @@ storedLanguageRedirect = true
 [header]
 layout = "fixed-fill-blur"
 mobileMenuStyle = "dropdown"
+logo = "logo.png"
+showTitle = true
 
 [footer]
 showMenu = true

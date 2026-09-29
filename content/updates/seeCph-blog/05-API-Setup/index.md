@@ -6,7 +6,7 @@ date: 2026-09-18
 project: "seecph"
 header: "API Setup"
 subheader: "18 september, 2026"
-icon: "list"
+icon: "rss"
 externalUrl: "blog/seecph-blog/#apisetup"
 weight: 996
 categories: ["API"]
@@ -34,7 +34,3 @@ Found an easy way to choose category from my `ENUM` directly when the dto is mad
 ```
 
 And then every `ENUM` has String label to catch and give the right one.
-
-{{< alert icon="bell" cardColor="#58585850" iconColor="#efe05baa" textColor="#fcfcfc" >}}
-**Next:** User validation, register, login etc.
-{{< /alert >}}

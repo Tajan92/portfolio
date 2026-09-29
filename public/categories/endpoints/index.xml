@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Endpoints on Home</title>
+    <link>http://localhost:59479/categories/endpoints/</link>
+    <description>Recent content in Endpoints on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>theisrud@gmail.com (Theis Rud Halkjær)</managingEditor>
+    <webMaster>theisrud@gmail.com (Theis Rud Halkjær)</webMaster>
+    <copyright>&amp;copy; 2026 Theis Rud Halkjær. All Rights Reserved.</copyright>
+    <lastBuildDate>Fri, 25 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:59479/categories/endpoints/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>seeCph: Endpoints</title>
+      <link>http://localhost:59479/updates/seecph-blog/06-endpoints/</link>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <author>theisrud@gmail.com (Theis Rud Halkjær)</author>
+      <guid>http://localhost:59479/updates/seecph-blog/06-endpoints/</guid>
+      <description>Figuring out how to set up handlers, controllers and their endpoints. Handlers with javalins Validator and controllers with javalins EndPoint Group interface.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
