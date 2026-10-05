@@ -12,4 +12,4 @@ externalUrl: "blog/seecph-blog/#Project-Start"
 weight: 1000
 ---
 
-{{< github repo="Tajan92/portfolio" showThumbnail=true >}}
+{{< github repo="Tajan92/seeCphBackendAPI" showThumbnail=true >}}

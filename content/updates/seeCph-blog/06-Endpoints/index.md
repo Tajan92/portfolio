@@ -71,7 +71,3 @@ public class ApplicationConfig implements EndpointGroup {
 If `ApplicationConfig` gets too big, the plan is to split it up into categories so it remains readable and easy to maintain.
 
 To keep the code easier to maintain and build on, I use interfaces to provide a blueprint for new additions and keep method names consistent.
-
-{{< alert icon="bell" cardColor="#58585850" iconColor="#efe05baa" textColor="#fcfcfc" >}}
-**Next:** I think will be Rest-assured test of my end points.
-{{< /alert >}}
