@@ -16,15 +16,15 @@ tags: ["JWT", "BCrypt", "User Roles"]
 Finally it was time to add some security to the application. I started by setting up a token creator and deciding what information I wanted to add and ended up with this:
 
 ```java
-            JWT.create()
-                .withIssuer(issuer)
-                .withSubject(String.valueOf(user.id()))
-                .withClaim("email", user.email())
-                .withClaim("name", user.name())
-                .withClaim("role", user.userRole().name())
-                .withIssuedAt(now)
-                .withExpiresAt(now.plusMillis(expirationTime))
-                .sign(signingAlgorithm(secret));
+JWT.create()
+        .withIssuer(issuer)
+        .withSubject(String.valueOf(user.id()))
+        .withClaim("email", user.email())
+        .withClaim("name", user.name())
+        .withClaim("role", user.userRole().name())
+        .withIssuedAt(now)
+        .withExpiresAt(now.plusMillis(expirationTime))
+        .sign(signingAlgorithm(secret));
 ```
 
 User role being the most important, as I wanted to set access roles on my endpoints to make sure eg. a normal user can't change an event, delete another user etc. Setting this up correctly took a lot of effort, as my code was a very different setup compared to our class examble. Specially user role, where the examble used `String` and I already had set mine up using `ENUM`, but managed to get it right in the end.
