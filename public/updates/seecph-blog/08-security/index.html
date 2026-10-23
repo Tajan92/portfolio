@@ -269,7 +269,7 @@
     "keywords": ["JWT","BCrypt","User Roles"],
     
     "mainEntityOfPage": "http://localhost:1313/updates/seecph-blog/08-security/",
-    "wordCount":  293 
+    "wordCount":  317 
   }]
   </script>
 
@@ -872,7 +872,7 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>Finally it was time to add some security to the application. I started by setting up a token creator and deciding what information I wanted to add and ended up with this:</p>
+          <p>Finally, it was time to add security to the application. I started by configuring a token creator to determine what information to include, resulting in this setup:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">JWT</span><span class="p">.</span><span class="na">create</span><span class="p">()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withIssuer</span><span class="p">(</span><span class="n">issuer</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withSubject</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="na">id</span><span class="p">()))</span><span class="w">
@@ -882,15 +882,28 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withIssuedAt</span><span class="p">(</span><span class="n">now</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withExpiresAt</span><span class="p">(</span><span class="n">now</span><span class="p">.</span><span class="na">plusMillis</span><span class="p">(</span><span class="n">expirationTime</span><span class="p">))</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">sign</span><span class="p">(</span><span class="n">signingAlgorithm</span><span class="p">(</span><span class="n">secret</span><span class="p">));</span></span></span></code></pre></div></div>
-<p>User role being the most important, as I wanted to set access roles on my endpoints to make sure eg. a normal user can&rsquo;t change an event, delete another user etc. Setting this up correctly took a lot of effort, as my code was a very different setup compared to our class examble. Specially user role, where the examble used <code>String</code> and I already had set mine up using <code>ENUM</code>, but managed to get it right in the end.</p>
-<p>As shown in the code above I&rsquo;ve used Json Wed Token (JWT) to setup my token. <code>issuer</code> <code>expirationTime</code> and <code>secret</code> are all set as environment variables, locally in a config.properties file thats in gitignore file and in the sky on Docker Hub in an .env file, so it&rsquo;s more secure.
-The setup after was pretty smart and was done pretty quickly with a login endpoint &ndash; authentication and authorization like this:</p>
+<p>The user role was particularly important, as I needed to enforce access control on my endpoints—ensuring, for example, that a standard user cannot modify events or delete other users. Getting this right took some effort because my codebase structure differed significantly from our class example. Most notably, the example used a String for roles, whereas I had already implemented mine using an Enum, but I managed to get it working smoothly in the end.</p>
+<p>The values used to create the token, such as the secret key, issuer and token expiration time, are never hardcoded or committed. Locally they are read from a <code>config.properties</code> file that is listed in <code>.gitignore</code>. When deployed, the application reads the same values from environment variables instead. On the DigitalOcean server, Docker Compose loads them from a <code>.env</code> file and passes them to the container when it starts, so the Docker image itself contains no secrets. During the build, GitHub Actions gets the values it needs to run the tests from GitHub Secrets.</p>
+<p>The setup for the login endpoint, along with the authentication and authorization handlers, came together quickly and cleanly:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">Javalin</span><span class="w"> </span><span class="nf">startServer</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Javalin</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="k">this</span><span class="p">::</span><span class="n">configuration</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="na">beforeMatched</span><span class="p">(</span><span class="n">securityHandler</span><span class="p">::</span><span class="n">authenticate</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="na">beforeMatched</span><span class="p">(</span><span class="n">securityHandler</span><span class="p">::</span><span class="n">authorize</span><span class="p">);</span></span></span></code></pre></div></div>
-<p>An improvement for next time could be that - users can hold more than one user role. - tokens get renewed/updated after an endpoint is hit after a set time - store tokens with an id to make sure tokens can&rsquo;t be used after logout or renewal</p>
-<p>Also added hashing with BCrypt, this went pretty smooth as I&rsquo;ve used it in projects before. But new this time was the validation of both with both creating, login, update and change password where I used Context bodyValidator.</p>
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="na">beforeMatched</span><span class="p">(</span><span class="n">securityHandler</span><span class="p">::</span><span class="n">authorize</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// ...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>Potential improvements for next time:</p>
+<ul>
+<li>
+<p>Allowing users to hold multiple roles.</p>
+</li>
+<li>
+<p>Implementing token renewal or refresh mechanisms after a set period of activity.</p>
+</li>
+<li>
+<p>Storing token identifiers to ensure tokens can be invalidated immediately upon logout or renewal.</p>
+</li>
+</ul>
+<p>I also integrated BCrypt for password hashing, which went smoothly since I have used it in previous projects. However, a new addition this time was implementing robust input validation using <code>Context.bodyValidator()</code> across user creation, login, updates, and password changes.</p>
 
   
   

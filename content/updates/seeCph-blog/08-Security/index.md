@@ -13,7 +13,7 @@ categories: ["Security"]
 tags: ["JWT", "BCrypt", "User Roles"]
 ---
 
-Finally it was time to add some security to the application. I started by setting up a token creator and deciding what information I wanted to add and ended up with this:
+Finally, it was time to add security to the application. I started by configuring a token creator to determine what information to include, resulting in this setup:
 
 ```java
 JWT.create()
@@ -27,21 +27,30 @@ JWT.create()
         .sign(signingAlgorithm(secret));
 ```
 
-User role being the most important, as I wanted to set access roles on my endpoints to make sure eg. a normal user can't change an event, delete another user etc. Setting this up correctly took a lot of effort, as my code was a very different setup compared to our class examble. Specially user role, where the examble used `String` and I already had set mine up using `ENUM`, but managed to get it right in the end.
+The user role was particularly important, as I needed to enforce access control on my endpoints—ensuring, for example, that a standard user cannot modify events or delete other users. Getting this right took some effort because my codebase structure differed significantly from our class example. Most notably, the example used a String for roles, whereas I had already implemented mine using an Enum, but I managed to get it working smoothly in the end.
 
-As shown in the code above I've used Json Wed Token (JWT) to setup my token. `issuer` `expirationTime` and `secret` are all set as environment variables, locally in a config.properties file thats in gitignore file and in the sky on Docker Hub in an .env file, so it's more secure.
-The setup after was pretty smart and was done pretty quickly with a login endpoint -- authentication and authorization like this:
+The values used to create the token, such as the secret key, issuer and token expiration time, are never hardcoded or committed. Locally they are read from a `config.properties` file that is listed in `.gitignore`. When deployed, the application reads the same values from environment variables instead. On the DigitalOcean server, Docker Compose loads them from a `.env` file and passes them to the container when it starts, so the Docker image itself contains no secrets. During the build, GitHub Actions gets the values it needs to run the tests from GitHub Secrets.
+
+The setup for the login endpoint, along with the authentication and authorization handlers, came together quickly and cleanly:
 
 ```java
 public Javalin startServer(int port) {
         var app = Javalin.create(this::configuration);
         app.beforeMatched(securityHandler::authenticate);
         app.beforeMatched(securityHandler::authorize);
+        // ...
+}
 ```
 
-An improvement for next time could be that - users can hold more than one user role. - tokens get renewed/updated after an endpoint is hit after a set time - store tokens with an id to make sure tokens can't be used after logout or renewal
+Potential improvements for next time:
 
-Also added hashing with BCrypt, this went pretty smooth as I've used it in projects before. But new this time was the validation of both with both creating, login, update and change password where I used Context bodyValidator.
+- Allowing users to hold multiple roles.
+
+- Implementing token renewal or refresh mechanisms after a set period of activity.
+
+- Storing token identifiers to ensure tokens can be invalidated immediately upon logout or renewal.
+
+I also integrated BCrypt for password hashing, which went smoothly since I have used it in previous projects. However, a new addition this time was implementing robust input validation using `Context.bodyValidator()` across user creation, login, updates, and password changes.
 
 {{< alert icon="bell" cardColor="#58585850" iconColor="#efe05baa" textColor="#fcfcfc" >}}
 Next: Final overview
