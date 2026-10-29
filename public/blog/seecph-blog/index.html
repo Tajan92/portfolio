@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54001&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en-us">
@@ -38,7 +38,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:1313/blog/seecph-blog/">
+  <link rel="canonical" href="http://localhost:54001/blog/seecph-blog/">
   
   
 
@@ -69,7 +69,7 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/blog/seecph-blog/">
+  <meta property="og:url" content="http://localhost:54001/blog/seecph-blog/">
 	<meta property="og:site_name" content="Home">
 	<meta property="og:title" content="seeCph Backend API">
 	<meta property="og:description" content="Backend API project for exam">
@@ -80,11 +80,11 @@
 		<meta property="article:tag" content="Postgres">
 		<meta property="article:tag" content="Digital Ocean">
 		<meta property="article:tag" content="Github">
-		<meta property="og:image" content="http://localhost:1313/blog/seecph-blog/featured.png">
+		<meta property="og:image" content="http://localhost:54001/blog/seecph-blog/featured.png">
 
   
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:1313/blog/seecph-blog/featured.png">
+	<meta name="twitter:image" content="http://localhost:54001/blog/seecph-blog/featured.png">
 	<meta name="twitter:title" content="seeCph Backend API">
 	<meta name="twitter:description" content="Backend API project for exam">
 
@@ -263,11 +263,11 @@
     "headline": "seeCph Backend API",
     
     "inLanguage": "en-us",
-    "url" : "http://localhost:1313/blog/seecph-blog/",
+    "url" : "http://localhost:54001/blog/seecph-blog/",
     "author" : {
       "@type": "Person",
       "name": "Theis Rud Halkjær",
-      "image": "http://localhost:1313/profil.png",
+      "image": "http://localhost:54001/profil.png",
       "sameAs": ["theisrud@gmail.com", "https://github.com/Tajan92", "https://www.linkedin.com/in/theis-rud-halkj%C3%A6r-24bbaa92/"]
     },
     
@@ -278,8 +278,8 @@
     
     "keywords": ["Java","Postgres","Digital Ocean","github"],
     
-    "mainEntityOfPage": "http://localhost:1313/blog/seecph-blog/",
-    "wordCount":  1348 
+    "mainEntityOfPage": "http://localhost:54001/blog/seecph-blog/",
+    "wordCount":  1971 
   }]
   </script>
 
@@ -681,6 +681,22 @@
   
   
 
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+
 
 
 
@@ -712,6 +728,7 @@
       
       <div class="mb-6">
          
+<p>seeCph is a REST API that gathers events in Copenhagen in one place. Events are fetched automatically from API every night and can also be created by approved organizers and admins. Users can search and filter events, save favourites and like events, and organizers can advertise their events on the front page. Read some of my progress during the project below or check the project out on github, where you can find the API documentation.</p>
  
       </div>
     </div>
@@ -1110,6 +1127,138 @@
     >Next: User validation using <strong>web-tokens</strong> and setting up <strong>BCrypt</strong> hashing</span>
 </div>
 
+ 
+      </div>
+    </div>
+  </div>
+</li></div>
+<div id="security">
+
+
+
+
+<li>
+  <div class="flex">
+    <div
+      class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full ltr:-ml-12 rtl:-mr-[79px] mt-5">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor" d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg></span>
+    </div>
+    <div class="block p-6 rounded-lg shadow-2xl flex-1 ms-6 mb-10 break-words">
+      <div class="flex justify-between">
+        
+          <h2 class="mt-0">Security</h2>
+        
+        
+      </div>
+      
+        <h4 class="mt-0">
+          18 october, 2026
+        </h4>
+      
+      <div class="mb-6">
+         <p>Finally, it was time to add security to the application. I started by configuring a token creator to determine what information to include, resulting in this setup:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">JWT</span><span class="p">.</span><span class="na">create</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withIssuer</span><span class="p">(</span><span class="n">issuer</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withSubject</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="na">id</span><span class="p">()))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withClaim</span><span class="p">(</span><span class="s">&#34;email&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">email</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withClaim</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">name</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withClaim</span><span class="p">(</span><span class="s">&#34;role&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="na">userRole</span><span class="p">().</span><span class="na">name</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withIssuedAt</span><span class="p">(</span><span class="n">now</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">withExpiresAt</span><span class="p">(</span><span class="n">now</span><span class="p">.</span><span class="na">plusMillis</span><span class="p">(</span><span class="n">expirationTime</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">sign</span><span class="p">(</span><span class="n">signingAlgorithm</span><span class="p">(</span><span class="n">secret</span><span class="p">));</span></span></span></code></pre></div></div>
+<p>The user role was particularly important, as I needed to enforce access control on my endpoints—ensuring, for example, that a standard user cannot modify events or delete other users. Getting this right took some effort because my codebase structure differed significantly from our class example. Most notably, the example used a String for roles, whereas I had already implemented mine using an Enum, but I managed to get it working smoothly in the end.</p>
+<p>The values used to create the token, such as the secret key, issuer and token expiration time, are never hardcoded or committed. Locally they are read from a <code>config.properties</code> file that is listed in <code>.gitignore</code>. When deployed, the application reads the same values from environment variables instead. On the DigitalOcean server, Docker Compose loads them from a <code>.env</code> file and passes them to the container when it starts, so the Docker image itself contains no secrets. During the build, GitHub Actions gets the values it needs to run the tests from GitHub Secrets.</p>
+<p>The setup for the login endpoint, along with the authentication and authorization handlers, came together quickly and cleanly:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="n">Javalin</span><span class="w"> </span><span class="nf">startServer</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">port</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Javalin</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="k">this</span><span class="p">::</span><span class="n">configuration</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="na">beforeMatched</span><span class="p">(</span><span class="n">securityHandler</span><span class="p">::</span><span class="n">authenticate</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">app</span><span class="p">.</span><span class="na">beforeMatched</span><span class="p">(</span><span class="n">securityHandler</span><span class="p">::</span><span class="n">authorize</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// ...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>Potential improvements for next time:</p>
+<ul>
+<li>
+<p>Allowing users to hold multiple roles.</p>
+</li>
+<li>
+<p>Implementing token renewal or refresh mechanisms after a set period of activity.</p>
+</li>
+<li>
+<p>Storing token identifiers to ensure tokens can be invalidated immediately upon logout or renewal.</p>
+</li>
+</ul>
+<p>I also integrated BCrypt for password hashing, which went smoothly since I have used it in previous projects. However, a new addition this time was implementing robust input validation using <code>Context.bodyValidator()</code> across user creation, login, updates, and password changes.</p>
+
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md shadow" style="background-color: #58585850"
+  
+  >
+  <span
+    
+      class="pe-3 flex items-center" style="color: #efe05baa"
+    
+    >
+    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<path fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg></span>
+  </span>
+
+  <span
+    
+      style="color: #fcfcfc"
+    
+    >Next: Final overview</span>
+</div>
+
+ 
+      </div>
+    </div>
+  </div>
+</li></div>
+<div id="deployment">
+
+
+
+
+<li>
+  <div class="flex">
+    <div
+      class="bg-primary-500 dark:bg-primary-300 text-neutral-50 dark:text-neutral-700 min-w-[30px] h-8 text-2xl flex items-center justify-center rounded-full ltr:-ml-12 rtl:-mr-[79px] mt-5">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416c0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96C14.3 96 0 81.7 0 64zM128 416c0 35.3-28.7 64-64 64s-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64zM32 160c159.1 0 288 128.9 288 288c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg></span>
+    </div>
+    <div class="block p-6 rounded-lg shadow-2xl flex-1 ms-6 mb-10 break-words">
+      <div class="flex justify-between">
+        
+          <h2 class="mt-0">Deployment</h2>
+        
+        
+      </div>
+      
+        <h4 class="mt-0">
+          25 october, 2026
+        </h4>
+      
+      <div class="mb-6">
+         <p>Finally time for deployment of my REST API, setting up automatic deployment when pushing to main. For this I use GitHub Actions and a Watchtower on DigitalOcean to poll for a new image on Docker Hub.</p>
+<p>When pushing the project to GitHub it checks if it&rsquo;s push or pull request to main.</p>
+<pre><code>Push:
+    -  Runs test and Maven builds the project as a fat jar and build a Docker image contain the jar and pushes it to Docker Hub.
+
+Pull request:
+    - Runs test and Maven builds the project as a fat jar, but nothing is deployed.
+</code></pre>
+<p>If a test fails, the process stops before the Docker steps, so a broken build never reaches the server.</p>
+<p>On the DigitalOcean, Watchtower runs as a container next to the application. It polls Docker Hub for a new version of the image and, when one appears, pulls it and restarts the application container with the same settings from <code>docker-compose.yml</code>.</p>
+<p>It&rsquo;s secured using secrets on both ends, the .env and GitHub secrets holds values needed for the process. GitHub holds values needed for the build like JWT settings used for tests and Docker Hub username and a secret access token for the push the image.
+Everything needed when the application is running on Digital Ocean is kept in <code>.env</code>, so the image itself doesn’t contain any secrets.</p>
  
       </div>
     </div>
