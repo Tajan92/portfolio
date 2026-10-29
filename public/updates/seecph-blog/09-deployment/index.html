@@ -270,7 +270,7 @@
     "keywords": ["GitHub Actions","Watchtower","Docker Hub","DigitalOcean"],
     
     "mainEntityOfPage": "http://localhost:1313/updates/seecph-blog/09-deployment/",
-    "wordCount":  311 
+    "wordCount":  309 
   }]
   </script>
 
@@ -894,12 +894,42 @@
         <div class="article-content max-w-prose mb-20">
           <p>Finally time for deployment of my <strong>REST API</strong>, setting up automatic deployment when pushing to main. For this I use <strong>GitHub Actions</strong> and a <strong>Watchtower</strong> on <strong>DigitalOcean</strong> to poll for a new image on <strong>Docker Hub</strong>.</p>
 <p>When pushing the project to <strong>GitHub</strong> it checks if it&rsquo;s push or pull request to main.</p>
-<pre><code>Push:
-    -  Runs test and **Maven** builds the project as a **fat jar** and build a **Docker image** contain the jar and pushes it to **Docker Hub**.
 
-Pull request:
-    - Runs test and **Maven** builds the project as a **fat jar**, but nothing is deployed.
-</code></pre>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md shadow" style="background-color: #58585850"
+  
+  >
+  <span
+    
+      class="text-primary-400 pe-3 flex items-center"
+    
+    >
+    
+  </span>
+
+  <span
+    
+      style="color: #fcfcfc"
+    
+    ><p>Push:</p>
+<ul>
+<li>Runs test and <strong>Maven</strong> builds the project as a <strong>fat jar</strong> and build a <strong>Docker image</strong> contain the jar and pushes it to <strong>Docker Hub</strong>.</li>
+</ul>
+<p>Pull request:</p>
+<ul>
+<li>Runs test and <strong>Maven</strong> builds the project as a <strong>fat jar</strong>, but nothing is deployed.</li>
+</ul>
+</span>
+</div>
+
 <p>If a test fails, the process stops before the <strong>Docker</strong> steps, so a broken build never reaches the server.</p>
 <p>On the <strong>DigitalOcean</strong>, <strong>Watchtower</strong> runs as a container next to the application. It polls <strong>Docker Hub</strong> for a new version of the image and, when one appears, pulls it and restarts the application container with the same settings from <code>docker-compose.yml</code>.</p>
 <p>It&rsquo;s secured using secrets on both ends, the .env and <strong>GitHub</strong> secrets holds values needed for the process. <strong>GitHub</strong> holds values needed for the build like <code>JWT</code> settings used for tests and <strong>Docker Hub</strong> username and a secret access token for the push the image.

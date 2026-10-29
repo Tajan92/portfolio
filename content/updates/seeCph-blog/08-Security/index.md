@@ -51,7 +51,3 @@ Potential improvements for next time:
 - Storing token identifiers to ensure tokens can be invalidated immediately upon logout or renewal.
 
 I also integrated BCrypt for password hashing, which went smoothly since I have used it in previous projects. However, a new addition this time was implementing robust input validation using `Context.bodyValidator()` across user creation, login, updates, and password changes.
-
-{{< alert icon="bell" cardColor="#58585850" iconColor="#efe05baa" textColor="#fcfcfc" >}}
-Next: Final overview
-{{< /alert >}}

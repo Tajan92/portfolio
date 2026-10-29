@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54001&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en-us">
@@ -38,7 +38,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:54001/blog/seecph-blog/">
+  <link rel="canonical" href="http://localhost:1313/blog/seecph-blog/">
   
   
 
@@ -69,7 +69,7 @@
   
 
   
-  <meta property="og:url" content="http://localhost:54001/blog/seecph-blog/">
+  <meta property="og:url" content="http://localhost:1313/blog/seecph-blog/">
 	<meta property="og:site_name" content="Home">
 	<meta property="og:title" content="seeCph Backend API">
 	<meta property="og:description" content="Backend API project for exam">
@@ -80,11 +80,11 @@
 		<meta property="article:tag" content="Postgres">
 		<meta property="article:tag" content="Digital Ocean">
 		<meta property="article:tag" content="Github">
-		<meta property="og:image" content="http://localhost:54001/blog/seecph-blog/featured.png">
+		<meta property="og:image" content="http://localhost:1313/blog/seecph-blog/featured.png">
 
   
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:54001/blog/seecph-blog/featured.png">
+	<meta name="twitter:image" content="http://localhost:1313/blog/seecph-blog/featured.png">
 	<meta name="twitter:title" content="seeCph Backend API">
 	<meta name="twitter:description" content="Backend API project for exam">
 
@@ -263,11 +263,11 @@
     "headline": "seeCph Backend API",
     
     "inLanguage": "en-us",
-    "url" : "http://localhost:54001/blog/seecph-blog/",
+    "url" : "http://localhost:1313/blog/seecph-blog/",
     "author" : {
       "@type": "Person",
       "name": "Theis Rud Halkjær",
-      "image": "http://localhost:54001/profil.png",
+      "image": "http://localhost:1313/profil.png",
       "sameAs": ["theisrud@gmail.com", "https://github.com/Tajan92", "https://www.linkedin.com/in/theis-rud-halkj%C3%A6r-24bbaa92/"]
     },
     
@@ -278,8 +278,8 @@
     
     "keywords": ["Java","Postgres","Digital Ocean","github"],
     
-    "mainEntityOfPage": "http://localhost:54001/blog/seecph-blog/",
-    "wordCount":  1971 
+    "mainEntityOfPage": "http://localhost:1313/blog/seecph-blog/",
+    "wordCount":  2044 
   }]
   </script>
 
@@ -1098,35 +1098,6 @@
 <p>I also implemented a <code>webhook</code> to sync my API events once a day during off-hours at night, when server traffic is minimal. It is set up with <strong>GitHub Actions</strong> to hit this endpoint:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">ticketmaster</span></span></span></code></pre></div></div>
 <p>When sending a request to the endpoint, it also passes a key/password to check against a system environment variable before running the sync. This ensures it cannot be hit by unauthorized users. Once validated, it makes a new thread, running in the background, to run the syncs. This allows the main thread to immediately return a <strong>200 OK</strong> status back to <strong>GitHub</strong>, preventing the HTTP request from timing out if the sync takes too long.</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #58585850"
-  
-  >
-  <span
-    
-      class="pe-3 flex items-center" style="color: #efe05baa"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-<path fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg></span>
-  </span>
-
-  <span
-    
-      style="color: #fcfcfc"
-    
-    >Next: User validation using <strong>web-tokens</strong> and setting up <strong>BCrypt</strong> hashing</span>
-</div>
-
  
       </div>
     </div>
@@ -1189,35 +1160,6 @@
 </li>
 </ul>
 <p>I also integrated BCrypt for password hashing, which went smoothly since I have used it in previous projects. However, a new addition this time was implementing robust input validation using <code>Context.bodyValidator()</code> across user creation, login, updates, and password changes.</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #58585850"
-  
-  >
-  <span
-    
-      class="pe-3 flex items-center" style="color: #efe05baa"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-<path fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg></span>
-  </span>
-
-  <span
-    
-      style="color: #fcfcfc"
-    
-    >Next: Final overview</span>
-</div>
-
  
       </div>
     </div>
@@ -1247,18 +1189,50 @@
         </h4>
       
       <div class="mb-6">
-         <p>Finally time for deployment of my REST API, setting up automatic deployment when pushing to main. For this I use GitHub Actions and a Watchtower on DigitalOcean to poll for a new image on Docker Hub.</p>
-<p>When pushing the project to GitHub it checks if it&rsquo;s push or pull request to main.</p>
-<pre><code>Push:
-    -  Runs test and Maven builds the project as a fat jar and build a Docker image contain the jar and pushes it to Docker Hub.
+         <p>Finally time for deployment of my <strong>REST API</strong>, setting up automatic deployment when pushing to main. For this I use <strong>GitHub Actions</strong> and a <strong>Watchtower</strong> on <strong>DigitalOcean</strong> to poll for a new image on <strong>Docker Hub</strong>.</p>
+<p>When pushing the project to <strong>GitHub</strong> it checks if it&rsquo;s push or pull request to main.</p>
 
-Pull request:
-    - Runs test and Maven builds the project as a fat jar, but nothing is deployed.
-</code></pre>
-<p>If a test fails, the process stops before the Docker steps, so a broken build never reaches the server.</p>
-<p>On the DigitalOcean, Watchtower runs as a container next to the application. It polls Docker Hub for a new version of the image and, when one appears, pulls it and restarts the application container with the same settings from <code>docker-compose.yml</code>.</p>
-<p>It&rsquo;s secured using secrets on both ends, the .env and GitHub secrets holds values needed for the process. GitHub holds values needed for the build like JWT settings used for tests and Docker Hub username and a secret access token for the push the image.
-Everything needed when the application is running on Digital Ocean is kept in <code>.env</code>, so the image itself doesn’t contain any secrets.</p>
+  
+  
+  
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md shadow" style="background-color: #58585850"
+  
+  >
+  <span
+    
+      class="text-primary-400 pe-3 flex items-center"
+    
+    >
+    
+  </span>
+
+  <span
+    
+      style="color: #fcfcfc"
+    
+    ><p>Push:</p>
+<ul>
+<li>Runs test and <strong>Maven</strong> builds the project as a <strong>fat jar</strong> and build a <strong>Docker image</strong> contain the jar and pushes it to <strong>Docker Hub</strong>.</li>
+</ul>
+<p>Pull request:</p>
+<ul>
+<li>Runs test and <strong>Maven</strong> builds the project as a <strong>fat jar</strong>, but nothing is deployed.</li>
+</ul>
+</span>
+</div>
+
+<p>If a test fails, the process stops before the <strong>Docker</strong> steps, so a broken build never reaches the server.</p>
+<p>On the <strong>DigitalOcean</strong>, <strong>Watchtower</strong> runs as a container next to the application. It polls <strong>Docker Hub</strong> for a new version of the image and, when one appears, pulls it and restarts the application container with the same settings from <code>docker-compose.yml</code>.</p>
+<p>It&rsquo;s secured using secrets on both ends, the .env and <strong>GitHub</strong> secrets holds values needed for the process. <strong>GitHub</strong> holds values needed for the build like <code>JWT</code> settings used for tests and <strong>Docker Hub</strong> username and a secret access token for the push the image.
+Everything needed when the application is running on <strong>DigitalOcean</strong> is kept in <code>.env</code>, so the image itself doesn’t contain any secrets.</p>
+<p>Deployment wasn&rsquo;t without struggles. The <strong>DigitalOcean</strong> droplet only has about <code>1 GB</code> of RAM, and it runs several projects at once, including a database, <strong>Caddy</strong> and <strong>Watchtower</strong>, so the containers started to fail.</p>
+<p>To fix it, I set up a <code>2 GB</code> swap file, which lets the server use part of the disk as extra memory when the RAM runs out. At the same time I added memory restrictions on each application and freed up over <code>200 MB</code> and it now stable with around <code>550 MB</code> usage of <strong>RAM</strong>.</p>
  
       </div>
     </div>

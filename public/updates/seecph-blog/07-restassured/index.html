@@ -268,7 +268,7 @@
     "keywords": ["Test","Web-Hook"],
     
     "mainEntityOfPage": "http://localhost:1313/updates/seecph-blog/07-restassured/",
-    "wordCount":  272 
+    "wordCount":  262 
   }]
   </script>
 
@@ -927,35 +927,6 @@
 <p>I also implemented a <code>webhook</code> to sync my API events once a day during off-hours at night, when server traffic is minimal. It is set up with <strong>GitHub Actions</strong> to hit this endpoint:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="n">ticketmaster</span></span></span></code></pre></div></div>
 <p>When sending a request to the endpoint, it also passes a key/password to check against a system environment variable before running the sync. This ensures it cannot be hit by unauthorized users. Once validated, it makes a new thread, running in the background, to run the syncs. This allows the main thread to immediately return a <strong>200 OK</strong> status back to <strong>GitHub</strong>, preventing the HTTP request from timing out if the sync takes too long.</p>
-
-  
-  
-  
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md shadow" style="background-color: #58585850"
-  
-  >
-  <span
-    
-      class="pe-3 flex items-center" style="color: #efe05baa"
-    
-    >
-    <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-<path fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg></span>
-  </span>
-
-  <span
-    
-      style="color: #fcfcfc"
-    
-    >Next: User validation using <strong>web-tokens</strong> and setting up <strong>BCrypt</strong> hashing</span>
-</div>
-
 
           
           

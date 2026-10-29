@@ -30,7 +30,3 @@ I also implemented a `webhook` to sync my API events once a day during off-hours
 ```
 
 When sending a request to the endpoint, it also passes a key/password to check against a system environment variable before running the sync. This ensures it cannot be hit by unauthorized users. Once validated, it makes a new thread, running in the background, to run the syncs. This allows the main thread to immediately return a **200 OK** status back to **GitHub**, preventing the HTTP request from timing out if the sync takes too long.
-
-{{< alert icon="bell" cardColor="#58585850" iconColor="#efe05baa" textColor="#fcfcfc" >}}
-Next: User validation using **web-tokens** and setting up **BCrypt** hashing
-{{< /alert >}}

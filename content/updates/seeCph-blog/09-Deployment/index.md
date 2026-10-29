@@ -17,11 +17,16 @@ Finally time for deployment of my **REST API**, setting up automatic deployment 
 
 When pushing the project to **GitHub** it checks if it's push or pull request to main.
 
-    Push:
-        -  Runs test and **Maven** builds the project as a **fat jar** and build a **Docker image** contain the jar and pushes it to **Docker Hub**.
+{{< alert icon="none" cardColor="#58585850" textColor="#fcfcfc" >}}
+Push:
 
-    Pull request:
-        - Runs test and **Maven** builds the project as a **fat jar**, but nothing is deployed.
+- Runs test and **Maven** builds the project as a **fat jar** and build a **Docker image** contain the jar and pushes it to **Docker Hub**.
+
+Pull request:
+
+- Runs test and **Maven** builds the project as a **fat jar**, but nothing is deployed.
+
+{{< /alert >}}
 
 If a test fails, the process stops before the **Docker** steps, so a broken build never reaches the server.
 
