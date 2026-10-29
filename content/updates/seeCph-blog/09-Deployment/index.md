@@ -13,19 +13,23 @@ categories: ["Deployment"]
 tags: ["GitHub Actions", "Watchtower", "Docker Hub", "DigitalOcean"]
 ---
 
-Finally time for deployment of my REST API, setting up automatic deployment when pushing to main. For this I use GitHub Actions and a Watchtower on DigitalOcean to poll for a new image on Docker Hub.
+Finally time for deployment of my **REST API**, setting up automatic deployment when pushing to main. For this I use **GitHub Actions** and a **Watchtower** on **DigitalOcean** to poll for a new image on **Docker Hub**.
 
-When pushing the project to GitHub it checks if it's push or pull request to main.
+When pushing the project to **GitHub** it checks if it's push or pull request to main.
 
     Push:
-        -  Runs test and Maven builds the project as a fat jar and build a Docker image contain the jar and pushes it to Docker Hub.
+        -  Runs test and **Maven** builds the project as a **fat jar** and build a **Docker image** contain the jar and pushes it to **Docker Hub**.
 
     Pull request:
-        - Runs test and Maven builds the project as a fat jar, but nothing is deployed.
+        - Runs test and **Maven** builds the project as a **fat jar**, but nothing is deployed.
 
-If a test fails, the process stops before the Docker steps, so a broken build never reaches the server.
+If a test fails, the process stops before the **Docker** steps, so a broken build never reaches the server.
 
-On the DigitalOcean, Watchtower runs as a container next to the application. It polls Docker Hub for a new version of the image and, when one appears, pulls it and restarts the application container with the same settings from `docker-compose.yml`.
+On the **DigitalOcean**, **Watchtower** runs as a container next to the application. It polls **Docker Hub** for a new version of the image and, when one appears, pulls it and restarts the application container with the same settings from `docker-compose.yml`.
 
-It's secured using secrets on both ends, the .env and GitHub secrets holds values needed for the process. GitHub holds values needed for the build like JWT settings used for tests and Docker Hub username and a secret access token for the push the image.
-Everything needed when the application is running on Digital Ocean is kept in `.env`, so the image itself doesn’t contain any secrets.
+It's secured using secrets on both ends, the .env and **GitHub** secrets holds values needed for the process. **GitHub** holds values needed for the build like `JWT` settings used for tests and **Docker Hub** username and a secret access token for the push the image.
+Everything needed when the application is running on **DigitalOcean** is kept in `.env`, so the image itself doesn’t contain any secrets.
+
+Deployment wasn't without struggles. The **DigitalOcean** droplet only has about `1 GB` of RAM, and it runs several projects at once, including a database, **Caddy** and **Watchtower**, so the containers started to fail.
+
+To fix it, I set up a `2 GB` swap file, which lets the server use part of the disk as extra memory when the RAM runs out. At the same time I added memory restrictions on each application and freed up over `200 MB` and it now stable with around `550 MB` usage of **RAM**.

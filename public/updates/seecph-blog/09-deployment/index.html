@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54001&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en-us">
@@ -38,7 +38,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:54001/updates/seecph-blog/09-deployment/">
+  <link rel="canonical" href="http://localhost:1313/updates/seecph-blog/09-deployment/">
   
   
 
@@ -69,7 +69,7 @@
   
 
   
-  <meta property="og:url" content="http://localhost:54001/updates/seecph-blog/09-deployment/">
+  <meta property="og:url" content="http://localhost:1313/updates/seecph-blog/09-deployment/">
 	<meta property="og:site_name" content="Home">
 	<meta property="og:title" content="seeCph: Deployment">
 	<meta property="og:description" content="Setting project up for deployment with GitHub Actions and Watchtower for automatic deployment when pushing project to main">
@@ -254,11 +254,11 @@
     "headline": "seeCph: Deployment",
     "description": "Setting project up for deployment with GitHub Actions and Watchtower for automatic deployment when pushing project to main",
     "inLanguage": "en-us",
-    "url" : "http://localhost:54001/updates/seecph-blog/09-deployment/",
+    "url" : "http://localhost:1313/updates/seecph-blog/09-deployment/",
     "author" : {
       "@type": "Person",
       "name": "Theis Rud Halkjær",
-      "image": "http://localhost:54001/profil.png",
+      "image": "http://localhost:1313/profil.png",
       "sameAs": ["theisrud@gmail.com", "https://github.com/Tajan92", "https://www.linkedin.com/in/theis-rud-halkj%C3%A6r-24bbaa92/"]
     },
     "copyrightYear": "2026",
@@ -269,8 +269,8 @@
     
     "keywords": ["GitHub Actions","Watchtower","Docker Hub","DigitalOcean"],
     
-    "mainEntityOfPage": "http://localhost:54001/updates/seecph-blog/09-deployment/",
-    "wordCount":  223 
+    "mainEntityOfPage": "http://localhost:1313/updates/seecph-blog/09-deployment/",
+    "wordCount":  311 
   }]
   </script>
 
@@ -892,18 +892,20 @@
         
 
         <div class="article-content max-w-prose mb-20">
-          <p>Finally time for deployment of my REST API, setting up automatic deployment when pushing to main. For this I use GitHub Actions and a Watchtower on DigitalOcean to poll for a new image on Docker Hub.</p>
-<p>When pushing the project to GitHub it checks if it&rsquo;s push or pull request to main.</p>
+          <p>Finally time for deployment of my <strong>REST API</strong>, setting up automatic deployment when pushing to main. For this I use <strong>GitHub Actions</strong> and a <strong>Watchtower</strong> on <strong>DigitalOcean</strong> to poll for a new image on <strong>Docker Hub</strong>.</p>
+<p>When pushing the project to <strong>GitHub</strong> it checks if it&rsquo;s push or pull request to main.</p>
 <pre><code>Push:
-    -  Runs test and Maven builds the project as a fat jar and build a Docker image contain the jar and pushes it to Docker Hub.
+    -  Runs test and **Maven** builds the project as a **fat jar** and build a **Docker image** contain the jar and pushes it to **Docker Hub**.
 
 Pull request:
-    - Runs test and Maven builds the project as a fat jar, but nothing is deployed.
+    - Runs test and **Maven** builds the project as a **fat jar**, but nothing is deployed.
 </code></pre>
-<p>If a test fails, the process stops before the Docker steps, so a broken build never reaches the server.</p>
-<p>On the DigitalOcean, Watchtower runs as a container next to the application. It polls Docker Hub for a new version of the image and, when one appears, pulls it and restarts the application container with the same settings from <code>docker-compose.yml</code>.</p>
-<p>It&rsquo;s secured using secrets on both ends, the .env and GitHub secrets holds values needed for the process. GitHub holds values needed for the build like JWT settings used for tests and Docker Hub username and a secret access token for the push the image.
-Everything needed when the application is running on Digital Ocean is kept in <code>.env</code>, so the image itself doesn’t contain any secrets.</p>
+<p>If a test fails, the process stops before the <strong>Docker</strong> steps, so a broken build never reaches the server.</p>
+<p>On the <strong>DigitalOcean</strong>, <strong>Watchtower</strong> runs as a container next to the application. It polls <strong>Docker Hub</strong> for a new version of the image and, when one appears, pulls it and restarts the application container with the same settings from <code>docker-compose.yml</code>.</p>
+<p>It&rsquo;s secured using secrets on both ends, the .env and <strong>GitHub</strong> secrets holds values needed for the process. <strong>GitHub</strong> holds values needed for the build like <code>JWT</code> settings used for tests and <strong>Docker Hub</strong> username and a secret access token for the push the image.
+Everything needed when the application is running on <strong>DigitalOcean</strong> is kept in <code>.env</code>, so the image itself doesn’t contain any secrets.</p>
+<p>Deployment wasn&rsquo;t without struggles. The <strong>DigitalOcean</strong> droplet only has about <code>1 GB</code> of RAM, and it runs several projects at once, including a database, <strong>Caddy</strong> and <strong>Watchtower</strong>, so the containers started to fail.</p>
+<p>To fix it, I set up a <code>2 GB</code> swap file, which lets the server use part of the disk as extra memory when the RAM runs out. At the same time I added memory restrictions on each application and freed up over <code>200 MB</code> and it now stable with around <code>550 MB</code> usage of <strong>RAM</strong>.</p>
 
           
           
